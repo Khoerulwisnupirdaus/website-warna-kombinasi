@@ -9,12 +9,12 @@ const Arch3DEngine = (() => {
   let scene, camera, renderer, controls;
   let currentSceneId = "bedroom";
   let activePalette = {
-    accent: "#588157",
-    main: "#DAD7CD",
-    ceiling: "#F8FAFC",
-    frame: "#344E41",
-    detail: "#A3B18A",
-    name: "Misty Sage & Warm Cream"
+    accent: "#CE3B27",
+    main: "#4A5D33",
+    ceiling: "#F4EFE6",
+    frame: "#1C2414",
+    detail: "#D87D4A",
+    name: "Tuscan Olive & Heirloom Tomato"
   };
 
   let currentFinish = "matte";

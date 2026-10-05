@@ -8,176 +8,196 @@
 // 1. DATABASE PRESET WARNA ARSITEKTUR PILIHAN
 // ==========================================================================
 const ARCHITECTURAL_SPECIFICATIONS = [
+  // --- ZONA RUANG TAMU & KELUARGA ---
+  {
+    id: "tamu-01",
+    name: "Tuscan Olive & Heirloom Tomato",
+    category: "cat-ruang-tamu",
+    categoryName: "Ruang Tamu & Keluarga",
+    mood: "hangat",
+    desc: "Kontras editorial legendaris. Dinding perimeter hijau zaitun Tuscan yang bersahaja dipadukan dengan focal feature wall merah tomat matang dan aksen kapur hangat. Memberikan dinamika visual dramatis, berselera tinggi, dan berjiwa Mediterania kontemporer.",
+    roles: ["Feature Wall (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Pintu", "Aksen Sofa"],
+    colors: ["#CE3B27", "#4A5D33", "#F4EFE6", "#1C2414", "#D87D4A"]
+  },
+  {
+    id: "tamu-02",
+    name: "Capri Sun Yellow & Royal Klein Blue",
+    category: "cat-ruang-tamu",
+    categoryName: "Ruang Tamu & Keluarga",
+    mood: "mewah",
+    desc: "Ketegasan artistik Bauhaus dan energi pesisir Capri. Dinding biru royal Klein yang elektrik dan berwibawa diimbangi aksen kuning lemon Capri yang menyala terang dan plafon putih salju bersih.",
+    roles: ["Dinding Aksen (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Logam", "Aksen Dekoratif"],
+    colors: ["#FFD027", "#0E38B1", "#FFFFFF", "#091E5E", "#FFAA00"]
+  },
+  {
+    id: "tamu-03",
+    name: "Klein Cobalt & Warm Apricot Peach",
+    category: "cat-ruang-tamu",
+    categoryName: "Ruang Tamu & Keluarga",
+    mood: "mewah",
+    desc: "Vibransi seni modern galeri kontemporer. Biru kobalt murni Yves Klein yang menghipnotis dipadukan dengan kehangatan lembut daging buah aprikot peach dan marmer putih susu.",
+    roles: ["Feature Wall (30%)", "Dinding Ruang (60%)", "Plafon (10%)", "Kusen Pintu", "Aksen Upholstery"],
+    colors: ["#FF9A76", "#002FA7", "#FFFDF9", "#001859", "#FF7E5F"]
+  },
+
   // --- ZONA KAMAR TIDUR ---
   {
     id: "kamar-01",
-    name: "Misty Sage & Warm Cream",
-    category: "cat-kamar",
-    categoryName: "Kamar Tidur",
-    mood: "tenang",
-    desc: "Aksen hijau sage tenang pada dinding kepala ranjang dipadu krem hangat pada perimeter. Mereduksi stres visual dan menunjang relaksasi optimal saat beristirahat.",
-    roles: ["Dinding Aksen (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Jendela", "Aksen Detail"],
-    colors: ["#588157", "#DAD7CD", "#F8FAFC", "#344E41", "#A3B18A"]
-  },
-  {
-    id: "kamar-02",
-    name: "Nordic Fog & Midnight Navy",
+    name: "Roasted Espresso & Velvet Blush",
     category: "cat-kamar",
     categoryName: "Kamar Tidur",
     mood: "mewah",
-    desc: "Abu-abu kabut netral dengan focal wall biru malam pekat. Menciptakan kedalaman ruang elegan tanpa pantulan silau untuk kamar utama berkarakter modern luxury.",
-    roles: ["Dinding Aksen (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Pintu", "Aksen Furniture"],
-    colors: ["#1E293B", "#E2E8F0", "#FFFFFF", "#0F172A", "#64748B"]
+    desc: "Pesona modernisme Milan 1970-an. Kepekatan dinding cokelat espresso sangrai pekat bertemu kelembutan velvet blush baby pink dan aksen kuarsa mawar. Menciptakan kedalaman intim, menenangkan, sekaligus sensual dan mewah.",
+    roles: ["Headboard Aksen (30%)", "Dinding Kamar (60%)", "Plafon & Lis (10%)", "Kusen Kayu", "Tekstil & Bedding"],
+    colors: ["#F2B5B8", "#2B1D19", "#FFF6F4", "#180F0D", "#E5989B"]
+  },
+  {
+    id: "kamar-02",
+    name: "Sicilian Pistachio & Bordeaux Rouge",
+    category: "cat-kamar",
+    categoryName: "Kamar Tidur",
+    mood: "mewah",
+    desc: "Sentuhan aristokrat Italia pertengahan abad. Dinding hijau pistachio lembut yang meneduhkan mata dipadukan dengan aksen mewah merah anggur Bordeaux pekat dan marmer Carrara putih.",
+    roles: ["Focal Wall (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Pintu", "Tekstil Velvet"],
+    colors: ["#6B1724", "#A8C5A5", "#FAF9F6", "#3B0A13", "#8A2839"]
   },
   {
     id: "kamar-03",
-    name: "Dusty Terracotta & Cashmere",
+    name: "Botanical Sage & Sunset Coral",
     category: "cat-kamar",
     categoryName: "Kamar Tidur",
     mood: "hangat",
-    desc: "Komposisi terakota merah bata lembut dengan krem kasmir. Memberikan kehangatan alami, nuansa earthy menenangkan, dan atmosfer bersahaja.",
-    roles: ["Dinding Aksen (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Kayu", "Tekstil"],
-    colors: ["#C99E94", "#EFE8E1", "#FFFFFF", "#7C4F44", "#DFD3C3"]
+    desc: "Kehangatan pesisir California modern. Dinding perimeter hijau sage botani yang menenangkan dipadukan dengan focal wall koral jingga kemerahan yang hangat bersahaja.",
+    roles: ["Headboard Aksen (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Kayu", "Tekstil Linen"],
+    colors: ["#F06553", "#738E76", "#FAF9F5", "#354538", "#FFA07A"]
   },
   {
     id: "kamar-04",
-    name: "Eucalyptus Calm & Oat Linen",
+    name: "Dark Ganache Chocolate & Crisp Mint",
     category: "cat-kamar",
     categoryName: "Kamar Tidur",
     mood: "tenang",
-    desc: "Inspirasi villa tropis kontemporer. Hijau eukaliptus lembut dipadu serat linen krem oat yang mengoptimalkan pantulan cahaya alami pagi hari.",
-    roles: ["Dinding Aksen (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen", "Detail Pintu"],
-    colors: ["#829460", "#F5F5F0", "#FAFAF9", "#4A5839", "#B4BF96"]
+    desc: "Perpaduan mewah khas salon Eropa abad pertengahan. Dinding cokelat ganache gelap yang lezat dan teduh dipadukan dengan aksen hijau mint dingin yang menyegarkan pikiran.",
+    roles: ["Dinding Aksen (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Pintu", "Aksen Bantal"],
+    colors: ["#8DE0B8", "#35201B", "#F9FAF7", "#1B0E0B", "#52B788"]
   },
 
   // --- ZONA FASAD EKSTERIOR ---
   {
     id: "fasad-01",
-    name: "Industrial Graphite & Warm Teak",
+    name: "Deep Forest Pine & Baked Terracotta",
     category: "cat-rumah",
     categoryName: "Fasad Eksterior",
-    mood: "modern",
-    desc: "Fasad villa modern 2 lantai. Dinding semen abu-abu netral dipertegas kolom aksen grafit arang dan elemen kisi kayu jati tropis berkarakter kokoh.",
-    roles: ["Focal Tower (30%)", "Dinding Luar (60%)", "Lisplang Kanopi (10%)", "Kusen Hitam", "Kisi Kayu"],
-    colors: ["#27272A", "#E4E4E7", "#FFFFFF", "#18181B", "#78350F"]
+    mood: "hangat",
+    desc: "Harmoni organik arsitektur kontemporer Nordik dan Jepang. Massa kanopi hijau pinus pekat berpadu solid dengan bidang terakota tanah liat panggang hangat dan lisplang travertine alami.",
+    roles: ["Tower Aksen (30%)", "Dinding Fasad (60%)", "Lisplang Overhang (10%)", "Kusen Jendela", "Batu Alam"],
+    colors: ["#C85A32", "#183329", "#F5EFE6", "#0E1E18", "#E07A5F"]
   },
   {
     id: "fasad-02",
-    name: "Mediterranean Sand & Terracotta",
+    name: "Brutalist Charcoal & Electric Tangerine",
     category: "cat-rumah",
     categoryName: "Fasad Eksterior",
-    mood: "hangat",
-    desc: "Gaya mediterania modern. Dinding krem pasir hangat dipadu aksen bata terakota panggang dan kanopi putih kapur yang memantulkan panas terik matahari.",
-    roles: ["Gerbang Aksen (30%)", "Dinding Utama (60%)", "Lisplang Atap (10%)", "Pintu Masuk", "Batu Alam"],
-    colors: ["#9A3412", "#F4EBD9", "#FEFDFB", "#431407", "#D97706"]
+    mood: "modern",
+    desc: "Ekspresi monolitik arsitektur kontemporer berani. Fasad beton arang gelap matte yang masif dipertegas kolom arsitektural oranye tangerine elektrik yang penuh energi presisi.",
+    roles: ["Tower Aksen (30%)", "Dinding Utama (60%)", "Lisplang Beton (10%)", "Kusen Hitam", "Detail Pintu"],
+    colors: ["#FF5500", "#1E2024", "#F1F3F5", "#121316", "#FF8C42"]
   },
   {
     id: "fasad-03",
-    name: "Scandinavian Pine & Arctic Slate",
+    name: "Santorini Aqua & Aegean Terracotta",
     category: "cat-rumah",
     categoryName: "Fasad Eksterior",
-    mood: "tenang",
-    desc: "Karakter arsitektur Nordik. Dinding abu-abu terang dengan bidang aksen hijau pinus gelap dan kusen aluminium antrasit yang presisi.",
-    roles: ["Menara Aksen (30%)", "Dinding Fasad (60%)", "Overhang (10%)", "Kusen Jendela", "Detail Talang"],
-    colors: ["#2D4A3E", "#E5E7EB", "#FFFFFF", "#1F2937", "#4B5563"]
+    mood: "mewah",
+    desc: "Drama arsitektur pesisir Laut Aegea. Biru aqua laut Santorini yang jernih dan berani berpadu kontras dengan volume terakota merah karat dan dinding putih kapur Mediterania.",
+    roles: ["Tower Kantilever (30%)", "Dinding Utama (60%)", "Overhang Kanopi (10%)", "Pintu Masuk", "Aksen Dinding"],
+    colors: ["#C24E2E", "#0372A8", "#FFFFFF", "#013550", "#E57850"]
   },
   {
     id: "fasad-04",
-    name: "Monolithic Basalt & Statuario",
+    name: "Kyoto Matcha & Blackened Walnut",
     category: "cat-rumah",
     categoryName: "Fasad Eksterior",
-    mood: "mewah",
-    desc: "Kontras fasad monolitik ultra-mewah. Dinding putih statuario berpadu dengan massa kanopi hitam basalt dan panel aksen tembaga teroksidasi.",
-    roles: ["Massa Kantilever (30%)", "Dinding Utama (60%)", "Plafon Teras (10%)", "Kusen Minimalis", "Aksen Tembaga"],
-    colors: ["#090D16", "#F1F5F9", "#FFFFFF", "#1E293B", "#92400E"]
-  },
-
-  // --- ZONA RUANG TAMU & KELUARGA ---
-  {
-    id: "tamu-01",
-    name: "Warm Greige & Raw Amber",
-    category: "cat-ruang-tamu",
-    categoryName: "Ruang Tamu & Keluarga",
-    mood: "hangat",
-    desc: "Paduan abu-krem modern dengan feature wall amber madu hangat di balik rak TV. Menghadirkan suasana hangat, akrab, dan mewah bagi seluruh keluarga.",
-    roles: ["Feature Wall (30%)", "Dinding Perimeter (60%)", "Plafon Drop (10%)", "Kusen Pintu", "Aksen Sofa"],
-    colors: ["#B45309", "#E7E5E4", "#FAFAF9", "#292524", "#78716C"]
-  },
-  {
-    id: "tamu-02",
-    name: "Minimalist Concrete & Ash Wood",
-    category: "cat-ruang-tamu",
-    categoryName: "Ruang Tamu & Keluarga",
     mood: "modern",
-    desc: "Estetika loft kontemporer. Dinding abu-abu semen ekspos bersih dipadu kisi kayu ash abu pucat dan aksen metal matte ramping.",
-    roles: ["Dinding Slat TV (30%)", "Dinding Utama (60%)", "Plafon Rata (10%)", "Panel Rak", "Detail Aksen"],
-    colors: ["#475569", "#CBD5E1", "#FFFFFF", "#0F172A", "#94A3B8"]
-  },
-  {
-    id: "tamu-03",
-    name: "Emerald Velvet & Brushed Brass",
-    category: "cat-ruang-tamu",
-    categoryName: "Ruang Tamu & Keluarga",
-    mood: "mewah",
-    desc: "Gaya klasik kontemporer. Bidang aksen hijau zamrud velvet dipadu dinding krem sutra dan sentuhan logam kuningan yang memantulkan cahaya lampu gantung.",
-    roles: ["Dinding Focal (30%)", "Dinding Utama (60%)", "Plafon & Lis (10%)", "Kusen Pintu", "Aksen Brass"],
-    colors: ["#064E3B", "#FDFBF7", "#FFFFFF", "#1C1917", "#D97706"]
+    desc: "Filosofi Wabi-sabi modern Kyoto. Dinding plester hijau matcha organik dipadukan dengan massa kisi kayu kenari bakar shou sugi ban dan aksen kertas washi alami.",
+    roles: ["Massa Aksen (30%)", "Dinding Fasad (60%)", "Plafon Teras (10%)", "Kisi Kayu", "Detail Kanopi"],
+    colors: ["#6B7B47", "#222421", "#F2EFE8", "#111210", "#8A9A65"]
   },
 
   // --- ZONA DAPUR & PANTRI ---
   {
     id: "dapur-01",
-    name: "Olive Herb & Clean Alabaster",
+    name: "Midnight Ink Navy & French Buttercream",
     category: "cat-dapur",
     categoryName: "Dapur & Pantri",
     mood: "hangat",
-    desc: "Nuansa dapur kuliner segar. Kabinet bawah dan aksen hijau zaitun organik dipadu dinding dapur alabaster higienis yang mudah dibersihkan.",
-    roles: ["Dinding Dapur (30%)", "Dinding Pantri (60%)", "Plafon (10%)", "Kusen", "Detail Rak"],
-    colors: ["#3F4E28", "#F3F4F6", "#FFFFFF", "#1E2019", "#8F9E6D"]
+    desc: "Kemewahan dapur klasik bistro Prancis. Kabinet dan dinding biru tinta malam yang dalam dipasangkan dengan kuning buttercream hangat yang lembut dan lis kuningan antik berkelas.",
+    roles: ["Backsplash Aksen (30%)", "Dinding Pantri (60%)", "Plafon Dapur (10%)", "Top Table", "Aksen Handle"],
+    colors: ["#F5D061", "#0D1B2A", "#FDFBF7", "#070F18", "#E0A938"]
   },
   {
     id: "dapur-02",
-    name: "Smoked Oak & Charcoal Matte",
+    name: "Parisian Lavender & Burnt Toffee",
     category: "cat-dapur",
     categoryName: "Dapur & Pantri",
-    mood: "modern",
-    desc: "Dapur bersih minimalis bergaya monokrom tegas. Arang pekat matte berpadu dinding abu-abu marmer dan lis aluminium doff yang higienis.",
-    roles: ["Bidang Backsplash (30%)", "Dinding Utama (60%)", "Plafon (10%)", "Top Table", "Aksen Lemari"],
-    colors: ["#1F2937", "#E5E7EB", "#FFFFFF", "#111827", "#4B5563"]
+    mood: "hangat",
+    desc: "Chic apartemen Haussmann Paris. Dinding ungu lavender kapur yang anggun dan sejuk diperkaya aksen kabinet cokelat karamel toffee bakar yang gurih dan berbobot.",
+    roles: ["Backsplash (30%)", "Dinding Pantri (60%)", "Plafon (10%)", "Top Table", "Aksen Rak"],
+    colors: ["#9680BA", "#9E5828", "#FAF7F5", "#4A230B", "#B59EC9"]
   },
 
   // --- ZONA RUANG KERJA / STUDIO ---
   {
     id: "kerja-01",
-    name: "Deep Prussian & Parchment",
+    name: "Deep Aubergine & Electric Chartreuse",
     category: "cat-kerja",
     categoryName: "Ruang Kerja & Studio",
-    mood: "tenang",
-    desc: "Meningkatkan daya fokus dan ketenangan kognitif. Dinding latar biru prusia pekat menyerap pantulan layar monitor, diseimbangkan dinding perimeter perkamen hangat.",
-    roles: ["Latar Meja Kerja (30%)", "Dinding Ruang (60%)", "Plafon (10%)", "Rak Buku", "Detail List"],
-    colors: ["#172554", "#EDE8DF", "#FFFFFF", "#030712", "#60A5FA"]
+    mood: "mewah",
+    desc: "Kombinasi eksentrik favorit desainer interior haute-couture. Bidang ungu terong tua yang misterius dan mewah dipecah oleh sengatan hijau chartreuse elektrik, memicu stimulasi kreativitas tanpa batas.",
+    roles: ["Panel Feature (30%)", "Dinding Studio (60%)", "Plafon & Drop (10%)", "Kusen Pintu", "Aksen Rak"],
+    colors: ["#C5EB34", "#2B132C", "#F7F4F0", "#170818", "#8E3E75"]
   },
   {
     id: "kerja-02",
-    name: "Bauhaus Umber & Soft Concrete",
+    name: "Abyssal Teal & Dijon Mustard",
+    category: "cat-kerja",
+    categoryName: "Ruang Kerja & Studio",
+    mood: "mewah",
+    desc: "Estetika sinematik bergaya Wes Anderson. Dinding biru teal laut dalam yang imersif dan fokus, disandingkan dengan aksen kuning mustard Dijon tajam dan lis perunggu gelap.",
+    roles: ["Bidang Presentasi (30%)", "Dinding Studio (60%)", "Plafon (10%)", "Meja Desain", "Aksen Rak"],
+    colors: ["#D8972C", "#0E434F", "#FBF8F1", "#07232B", "#B87B1E"]
+  },
+  {
+    id: "kerja-03",
+    name: "Tokyo Carbon & Acid Citron",
     category: "cat-kerja",
     categoryName: "Ruang Kerja & Studio",
     mood: "modern",
-    desc: "Studio arsitek dan desain produktif. Cokelat tanah umber geometris dengan abu semen netral yang memberi kontras nyaman untuk konsentrasi kerja berjam-jam.",
-    roles: ["Bidang Presentasi (30%)", "Dinding Studio (60%)", "Plafon (10%)", "Meja Drafting", "Aksen Garis"],
-    colors: ["#451A03", "#E2E8F0", "#FFFFFF", "#1C1917", "#B45309"]
+    desc: "Futurisme brutalist studio arsitektur Tokyo. Bidang monokrom karbon hitam legam berdaya serap cahaya tinggi, disengat garis lampu dan panel kuning acid citron hiper-modern.",
+    roles: ["Dinding Konsep (30%)", "Dinding Studio (60%)", "Plafon Drop (10%)", "Meja Kerja", "Aksen Akrilik"],
+    colors: ["#CEF518", "#141518", "#ECEFF1", "#090A0C", "#98BF00"]
   },
 
   // --- ZONA KAMAR MANDI / SPA ---
   {
     id: "mandi-01",
-    name: "Aegean Aqua & Glacier White",
+    name: "Desert Ochre & Powder Sky Blue",
     category: "cat-mandi",
     categoryName: "Kamar Mandi & Spa",
     mood: "tenang",
-    desc: "Suasana spa privat yang menyegarkan. Aksen biru aqua egean yang bersih dipadu putih glasier higienis tahan kelembaban tinggi.",
-    roles: ["Area Basah (30%)", "Dinding Kering (60%)", "Plafon Spa (10%)", "Kusen Aluminium", "Aksen Cermin"],
-    colors: ["#0284C7", "#F0F9FF", "#FFFFFF", "#0C4A6E", "#38BDF8"]
+    desc: "Atmosfer riad Maroko dan langit Santa Fe. Dinding tadelakt kuning ochre gurun yang hangat dipasangkan dengan biru langit pucat yang sejuk, menciptakan ruang spa dengan kesegaran alami.",
+    roles: ["Area Basah (30%)", "Dinding Kering (60%)", "Plafon Spa (10%)", "Kusen Jendela", "Aksen Cermin"],
+    colors: ["#7BA3D0", "#B86524", "#FDF7EE", "#5C310F", "#4070A0"]
+  },
+  {
+    id: "mandi-02",
+    name: "Port Wine Velvet & Heritage Powder Blue",
+    category: "cat-mandi",
+    categoryName: "Kamar Mandi & Spa",
+    mood: "mewah",
+    desc: "Eklektisisme elegan manor Inggris. Dinding merah port wine yang megah dan dramatis diimbangi panel biru powder klasik yang hening serta perangkat saniter krom mewah.",
+    roles: ["Dinding Aksen (30%)", "Dinding Ruang (60%)", "Plafon Spa (10%)", "Kusen Jendela", "Aksen Cermin"],
+    colors: ["#7AA2B8", "#5A1221", "#FAF8F6", "#2B050D", "#9FBCCB"]
   }
 ];
 
@@ -191,14 +211,14 @@ const AmbientCanvasEngine = (() => {
   let orbs = [];
 
   const AMBIENT_PALETTES = [
-    { name: "Obsidian Gold", colors: ["#d97706", "#92400e", "#1e3a8a", "#090d16"] },
-    { name: "Emerald Velvet", colors: ["#059669", "#047857", "#064e3b", "#06130e"] },
-    { name: "Nordic Twilight", colors: ["#2563eb", "#1d4ed8", "#4f46e5", "#080c16"] },
-    { name: "Terracotta Earth", colors: ["#ea580c", "#c2410c", "#7c2d12", "#130906"] },
-    { name: "Cyber Quartz", colors: ["#9333ea", "#7c3aed", "#0284c7", "#0b0714"] },
-    { name: "Deep Abyssal", colors: ["#06b6d4", "#0891b2", "#1e3a8a", "#040c14"] },
-    { name: "Titanium Slate", colors: ["#64748b", "#475569", "#334155", "#090d14"] },
-    { name: "Dusk Crimson", colors: ["#e11d48", "#be123c", "#581c87", "#14060b"] }
+    { name: "Olive & Tomato", colors: ["#ce3b27", "#4a5d33", "#2b331a", "#0d130a"] },
+    { name: "Espresso & Blush", colors: ["#f2b5b8", "#9e5828", "#2b1d19", "#0d0908"] },
+    { name: "Capri & Royal Blue", colors: ["#ffd027", "#0e38b1", "#061b57", "#060912"] },
+    { name: "Aubergine & Chartreuse", colors: ["#c5eb34", "#7c3aed", "#2b132c", "#0d050d"] },
+    { name: "Forest & Terracotta", colors: ["#c85a32", "#183329", "#0e1e18", "#080f0c"] },
+    { name: "Charcoal & Tangerine", colors: ["#ff5500", "#ff8c42", "#1e2024", "#08080a"] },
+    { name: "Pistachio & Bordeaux", colors: ["#6b1724", "#a8c5a5", "#3b0a13", "#0c0406"] },
+    { name: "Cobalt & Apricot", colors: ["#ff9a76", "#002fa7", "#ff7e5f", "#040817"] }
   ];
 
   let currentPaletteIdx = 0;
