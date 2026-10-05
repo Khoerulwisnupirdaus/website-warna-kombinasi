@@ -3,1130 +3,409 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sistem Spesifikasi Warna & Formulasi Cat Arsitektural Komprehensif">
-  <title>ARCHITECTURAL COLOR SPECIFIER &bull; Enterprise Color Suite</title>
+  <meta name="description" content="Studio Eksplorasi Warna Arsitektur & Simulasi Ruang 3D Real-Time">
+  <title>KROMA &bull; Studio Warna Arsitektur &amp; Simulasi 3D</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Pita Difraksi Spektrum Arsitektural -->
-  <div class="chromatic-spectrum-ribbon" aria-hidden="true"></div>
+  <!-- Kanvas Latar Belakang Abstrak Generatif Real-Time -->
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-vignette" aria-hidden="true"></div>
 
-  <!-- Header Sistem -->
-  <header class="app-header">
-    <div class="header-inner">
-      <div class="brand-zone">
-        <div class="brand-symbol">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
+  <!-- Header Navigasi Minimalis -->
+  <header class="studio-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
             <path d="M3 9h18"/>
             <path d="M9 21V9"/>
           </svg>
         </div>
-        <div class="brand-meta">
-          <div class="brand-title">COLOR SPECIFIER <span class="version-tag">PRO v3.4</span></div>
-          <div class="brand-sub">ARCHITECTURAL PALETTE ENGINE &bull; 60-30-10 HARMONY &bull; WCAG 2.2 COMPLIANT</div>
+        <div class="brand-text">
+          <div class="brand-name">KROMA</div>
+          <div class="brand-tagline">Studio Warna &amp; Simulasi Ruang</div>
         </div>
       </div>
 
-      <!-- Navigasi Sistem Tab (Bebas Emoji) -->
-      <nav class="system-nav" role="tablist">
-        <button class="nav-item active" data-tab="tab-katalog" role="tab" aria-selected="true">
-          <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7"/>
-            <rect x="14" y="3" width="7" height="7"/>
-            <rect x="14" y="14" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/>
+      <!-- Navigasi Tab Utama -->
+      <nav class="studio-nav" role="tablist">
+        <button class="nav-tab active" data-tab="tab-katalog" role="tab" aria-selected="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
           </svg>
-          <span>Katalog Arsitektural</span>
+          <span>Katalog Warna</span>
         </button>
-        <button class="nav-item" data-tab="tab-studio" role="tab" aria-selected="false">
-          <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button class="nav-tab" data-tab="tab-studio" role="tab" aria-selected="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
           </svg>
-          <span>Studio Elevasi & Cahaya</span>
+          <span>Simulasi 3D</span>
         </button>
-        <button class="nav-item" data-tab="tab-komparasi" role="tab" aria-selected="false">
-          <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="20" x2="18" y2="10"/>
-            <line x1="12" y1="20" x2="12" y2="4"/>
-            <line x1="6" y1="20" x2="6" y2="14"/>
-          </svg>
-          <span>Komparasi Metrik</span>
-        </button>
-        <button class="nav-item" data-tab="tab-analisis" role="tab" aria-selected="false">
-          <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button class="nav-tab" data-tab="tab-analisis" role="tab" aria-selected="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/>
             <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
             <path d="M2 12h20"/>
           </svg>
-          <span>Kalkulator Roda HSL</span>
+          <span>Roda Harmoni</span>
         </button>
-        <button class="nav-item" data-tab="tab-workspace" role="tab" aria-selected="false">
-          <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button class="nav-tab" data-tab="tab-workspace" role="tab" aria-selected="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
             <polyline points="17 21 17 13 7 13 7 21"/>
-            <polyline points="7 3 7 8 15 8"/>
           </svg>
-          <span>Workspace Mandiri</span>
-          <span class="system-counter" id="custom-count-badge">0</span>
+          <span>Koleksi Tersimpan</span>
+          <span class="vault-count-badge" id="custom-count-badge">0</span>
         </button>
       </nav>
 
-      <!-- Quick Action: Generator Latar Abstrak & Studio Abstrak -->
-      <div class="header-action-tools">
-        <button class="btn btn-outline stripe-studio-toggle-btn" id="toggle-stripe-panel-btn" title="Kustomisasi Latar Abstrak">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="4" y1="21" x2="4" y2="14"/>
-            <line x1="4" y1="10" x2="4" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="12"/>
-            <line x1="12" y1="8" x2="12" y2="3"/>
-            <line x1="20" y1="21" x2="20" y2="16"/>
-            <line x1="20" y1="12" x2="20" y2="3"/>
-            <line x1="1" y1="14" x2="7" y2="14"/>
-            <line x1="9" y1="8" x2="15" y2="8"/>
-            <line x1="17" y1="16" x2="23" y2="16"/>
-          </svg>
-          <span>Studio Abstrak</span>
-        </button>
-        <button class="btn btn-primary stripe-gen-btn" id="generate-bg-stripe-btn" title="Generate Komposisi Latar Abstrak Baru">
+      <!-- Aksi Cepat Header -->
+      <div class="header-actions">
+        <button class="btn btn-ambient" id="generate-bg-stripe-btn" title="Generate Nuansa Abstrak Baru">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
           </svg>
-          <span>Generate Abstrak Baru</span>
+          <span>Generate Nuansa</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Bilah Panel Studio Abstrak Interaktif (Bebas Emoji) -->
-  <aside id="stripe-studio-drawer" class="stripe-studio-drawer" aria-label="Studio Kustomisasi Latar Abstrak">
-    <div class="stripe-drawer-inner">
-      <div class="drawer-group">
-        <span class="drawer-label">Tema Abstrak Mewah:</span>
-        <div class="stripe-theme-chips" id="stripe-theme-chips">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-      <div class="drawer-group">
-        <span class="drawer-label">Komposisi Seni:</span>
-        <div class="stripe-control-pills" id="abstract-style-controls">
-          <button class="pill-mini active" data-style="fluid">Fluid Mesh (Gradien Cair)</button>
-          <button class="pill-mini" data-style="topography">Topografi Kontur Arsitek</button>
-          <button class="pill-mini" data-style="prism">Prisma Refraksi Kaca</button>
-          <button class="pill-mini" data-style="bauhaus">Geometri Asimetris</button>
-        </div>
-      </div>
-      <div class="drawer-group">
-        <span class="drawer-label">Intensitas &amp; Kedalaman:</span>
-        <div class="stripe-control-pills" id="stripe-intensity-controls">
-          <button class="pill-mini active" data-intensity="deep">Kontras Obsidian (Gelap)</button>
-          <button class="pill-mini" data-intensity="balanced">Seimbang Natural</button>
-          <button class="pill-mini" data-intensity="vivid">Pendaran Terang</button>
-        </div>
-      </div>
-      <div class="drawer-actions">
-        <button class="btn btn-primary" id="stripe-random-algo-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="16 3 21 3 21 8"/>
-            <line x1="4" y1="20" x2="21" y2="3"/>
-            <polyline points="21 16 21 21 16 21"/>
-            <line x1="15" y1="15" x2="21" y2="21"/>
-            <line x1="4" y1="4" x2="9" y2="9"/>
-          </svg>
-          <span>Acak Algoritma Abstrak</span>
-        </button>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Workspace Container -->
-  <main class="app-workspace">
+  <!-- Kontainer Konten Utama -->
+  <main class="studio-main">
 
     <!-- ====================================================================
-         MODUL 1: KATALOG ARSITEKTURAL LENGKAP
+         TAB 1: KATALOG WARNA ARSITEKTUR
          ==================================================================== -->
     <section id="tab-katalog" class="workspace-pane active">
 
-      <!-- Control Bar & Multi-Filter Query -->
-      <div class="control-panel-block">
-        <div class="panel-top-row">
+      <!-- Bar Pencarian & Filter Kategori -->
+      <div class="catalog-filter-bar">
+        <div class="filter-header-row">
           <div>
-            <h1 class="panel-heading">Spesifikasi Palet Cat & Ruang</h1>
-            <p class="panel-caption">Formulasi rasio arsitektural: Dinding Utama (60%), Dinding Sekunder/Aksen (30%), Lisplang & Plafon (10%).</p>
+            <h1 class="catalog-title">Koleksi Kombinasi Warna</h1>
+            <p class="catalog-sub">Paduan warna arsitektural untuk fasad rumah, kamar tidur, ruang keluarga, dan ruang kerja.</p>
           </div>
-
-          <div class="search-input-container">
-            <svg class="search-svg-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-            <input type="text" id="paint-search" placeholder="Filter kode hex, nama ruang, gaya arsitektur..." autocomplete="off">
+            <input type="text" id="paint-search" placeholder="Cari warna, kode hex, atau nama ruang..." autocomplete="off">
           </div>
         </div>
 
-        <div class="filter-criteria-grid">
-          <div class="criteria-row">
-            <span class="criteria-title">Zonasi Ruang:</span>
-            <div class="filter-chips" id="paint-tag-filters">
-              <button class="chip-btn active" data-filter="all">Semua Zonasi</button>
-              <button class="chip-btn" data-filter="cat-kamar">Kamar Tidur</button>
-              <button class="chip-btn" data-filter="cat-rumah">Fasad Eksterior</button>
-              <button class="chip-btn" data-filter="cat-ruang-tamu">Ruang Tamu & Keluarga</button>
-              <button class="chip-btn" data-filter="cat-dapur">Dapur & Pantri</button>
-              <button class="chip-btn" data-filter="cat-kerja">Ruang Kerja / Studio</button>
-              <button class="chip-btn" data-filter="cat-mandi">Kamar Mandi / Spa</button>
-            </div>
+        <!-- Filter Pills Scroll Horizontal -->
+        <div class="filter-scroll-wrapper">
+          <div class="filter-pills-row" id="paint-tag-filters">
+            <button class="pill-chip active" data-filter="all">Semua Ruang</button>
+            <button class="pill-chip" data-filter="cat-kamar">Kamar Tidur</button>
+            <button class="pill-chip" data-filter="cat-rumah">Fasad Eksterior</button>
+            <button class="pill-chip" data-filter="cat-ruang-tamu">Ruang Tamu &amp; Keluarga</button>
+            <button class="pill-chip" data-filter="cat-dapur">Dapur &amp; Pantri</button>
+            <button class="pill-chip" data-filter="cat-kerja">Ruang Kerja &amp; Studio</button>
+            <button class="pill-chip" data-filter="cat-mandi">Kamar Mandi &amp; Spa</button>
           </div>
-
-          <div class="criteria-row">
-            <span class="criteria-title">Psikologi Visual:</span>
-            <div class="filter-chips" id="mood-tag-filters">
-              <button class="mood-btn active" data-mood="all">Semua Karakter</button>
-              <button class="mood-btn" data-mood="tenang">Tenang / Redup Stres</button>
-              <button class="mood-btn" data-mood="hangat">Hangat / Organik Earthy</button>
-              <button class="mood-btn" data-mood="modern">Modern / Monokrom Tegas</button>
-              <button class="mood-btn" data-mood="mewah">Mewah / High-Contrast</button>
-            </div>
+          <div class="filter-pills-row mood-pills" id="mood-tag-filters">
+            <button class="pill-chip mood-chip active" data-mood="all">Semua Karakter</button>
+            <button class="pill-chip mood-chip" data-mood="tenang">Tenang &amp; Menenangkan</button>
+            <button class="pill-chip mood-chip" data-mood="hangat">Hangat &amp; Alami</button>
+            <button class="pill-chip mood-chip" data-mood="modern">Modern Monokrom</button>
+            <button class="pill-chip mood-chip" data-mood="mewah">Mewah &amp; Elegan</button>
           </div>
         </div>
       </div>
 
-      <!-- Catalog Grid Output -->
-      <div class="architectural-catalog-grid" id="paint-palettes-container">
-        <!-- Rendered by JS -->
+      <!-- Grid Kartu Palet Warna -->
+      <div class="catalog-grid" id="paint-palettes-container">
+        <!-- Dirender secara dinamis oleh app.js -->
       </div>
     </section>
 
     <!-- ====================================================================
-         MODUL 2: ELEVASI ARSITEKTUR & SIMULASI SUHU KELVIN
+         TAB 2: SIMULASI RUANG 3D REAL-TIME
          ==================================================================== -->
     <section id="tab-studio" class="workspace-pane">
 
-      <div class="elevation-studio-card">
-        <div class="studio-header-bar">
-          <div>
-            <h2 class="panel-heading">Visualizer Arsitektural 3D & Uji Kelayakan Cahaya</h2>
-            <p class="panel-caption">Simulasi spektral pengaruh suhu cahaya lampu terhadap reflektansi dinding (LRV) dalam perspektif ruang fotorealistik.</p>
+      <div class="studio-viewport-card">
+        
+        <!-- Panggung 3D WebGL -->
+        <div class="viewport-stage" id="elevation-stage">
+          <div class="arch-webgl-wrapper" id="arch-webgl-wrapper">
+            <canvas id="arch-webgl-canvas" class="arch-webgl-canvas"></canvas>
           </div>
-          <div class="spec-id-badge" id="current-room-palette-name">
-            Spesifikasi: <strong>Misty Sage & Warm Cream</strong>
-          </div>
-        </div>
 
-        <!-- Toolbar Suhu Kelvin Lampu -->
-        <div class="kelvin-toolbar">
-          <span class="kelvin-label">Suhu Cahaya Ruang:</span>
-          <div class="kelvin-selector-group">
-            <button class="kelvin-btn active" data-light="daylight">
-              <span class="kelvin-indicator day"></span>
-              <span>Alami Siang (5500K)</span>
-            </button>
-            <button class="kelvin-btn" data-light="golden">
-              <span class="kelvin-indicator golden"></span>
-              <span>Sore / Horizon (3200K)</span>
-            </button>
-            <button class="kelvin-btn" data-light="warm">
-              <span class="kelvin-indicator warm"></span>
-              <span>Warm White (2700K)</span>
-            </button>
-            <button class="kelvin-btn" data-light="cool">
-              <span class="kelvin-indicator cool"></span>
-              <span>Cool White (4000K)</span>
-            </button>
-            <button class="kelvin-btn" data-light="night">
-              <span class="kelvin-indicator night"></span>
-              <span>Nocturnal / Aksen</span>
-            </button>
-          </div>
-        </div>
+          <!-- Toolbar Mengambang Kontrol 3D Terpadu -->
+          <div class="floating-viewport-toolbar">
+            <!-- Pilihan Ruang -->
+            <div class="toolbar-cluster" id="elevation-scene-selector">
+              <span class="cluster-label">Ruang:</span>
+              <button class="tool-btn active" data-scene="bedroom">Kamar Tidur</button>
+              <button class="tool-btn" data-scene="facade">Fasad Villa</button>
+              <button class="tool-btn" data-scene="living">Ruang Tamu</button>
+            </div>
 
-        <!-- Toolbar Pemilihan Model & Efek Visualizer Arsitektur -->
-        <div class="elevation-scene-toolbar">
-          <div class="toolbar-scene-cluster">
-            <span class="scene-label">Perspektif 3D:</span>
-            <div class="scene-selector-group" id="elevation-scene-selector">
-              <button class="scene-btn active" data-scene="bedroom">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/>
-                </svg>
-                <span>1. Kamar Tidur Utama (Interior 3D)</span>
-              </button>
-              <button class="scene-btn" data-scene="facade">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6"/>
-                </svg>
-                <span>2. Fasad Rumah Modern (Eksterior 3D)</span>
-              </button>
-              <button class="scene-btn" data-scene="living">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="7" width="20" height="15" rx="2"/>
-                  <polyline points="17 2 12 7 7 2"/>
-                </svg>
-                <span>3. Ruang Tamu & TV Slat (Interior 3D)</span>
-              </button>
+            <!-- Pilihan Waktu / Pencahayaan -->
+            <div class="toolbar-cluster">
+              <span class="cluster-label">Cahaya:</span>
+              <button class="tool-btn active" data-light="daylight">Siang (5500K)</button>
+              <button class="tool-btn" data-light="golden">Sore (3200K)</button>
+              <button class="tool-btn" data-light="warm">Malam (2700K)</button>
+            </div>
+
+            <!-- Sudut Pandang Kamera -->
+            <div class="toolbar-cluster">
+              <span class="cluster-label">Kamera:</span>
+              <button class="tool-btn active" data-preset="default">Perspektif</button>
+              <button class="tool-btn" data-preset="front">Depan</button>
+              <button class="tool-btn" data-preset="angle">Sudut 45&deg;</button>
+              <button class="tool-btn" id="toggle-autorotate-btn" title="Rotasi Otomatis 360 Derajat">Tur 360&deg;</button>
             </div>
           </div>
 
-          <div class="toolbar-options-cluster">
-            <div class="opt-group">
-              <span class="scene-label">Engine:</span>
-              <div class="shader-selector-group" id="engine-mode-selector">
-                <button class="shader-btn active" data-engine="webgl">3D Real-Time (PBR)</button>
-                <button class="shader-btn" data-engine="vector">Elevasi Vektor</button>
-              </div>
-            </div>
-            <div class="opt-group">
-              <span class="scene-label">Tekstur Kilap:</span>
-              <div class="shader-selector-group" id="shader-selector">
-                <button class="shader-btn active" data-shader="matte">Matte Doff</button>
-                <button class="shader-btn" data-shader="satin">Satin Sheen</button>
-                <button class="shader-btn" data-shader="semigloss">Semi-Gloss</button>
-              </div>
-            </div>
-            <div class="opt-group">
-              <span class="scene-label">Efek Optik:</span>
-              <div class="shader-selector-group">
-                <button class="shader-btn active" id="toggle-sunbeam-btn">Sinar Matahari</button>
-                <button class="shader-btn active" id="toggle-lights-btn">Lampu Aksen</button>
-              </div>
-            </div>
+          <!-- Petunjuk Navigasi Halus -->
+          <div class="viewport-nav-hint">
+            Klik dan geser mouse untuk rotasi 3D &bull; Scroll untuk zoom &bull; Klik bidang untuk info warna
           </div>
         </div>
 
-        <!-- Panggung Visualizer Arsitektural 3D Perspektif Nyata -->
-        <div class="elevation-viewport" id="room-lighting-filter">
-          <div class="elevation-stage scene-bedroom finish-matte engine-webgl" id="elevation-stage">
-            
-            <!-- Real-Time 3D WebGL Canvas Container -->
-            <div class="arch-webgl-wrapper" id="arch-webgl-wrapper">
-              <canvas id="arch-webgl-canvas" class="arch-webgl-canvas"></canvas>
+        <!-- Panel Detail Palet Aktif di Bawah Viewport 3D -->
+        <div class="viewport-meta-panel">
+          <div class="meta-header-row">
+            <div>
+              <div class="meta-sub">Palet yang Diterapkan ke Ruang:</div>
+              <h2 class="meta-title" id="spec-display-title">Misty Sage &amp; Warm Cream</h2>
             </div>
-
-            <!-- Floating 3D Camera Controls & Orbit HUD -->
-            <div class="webgl-camera-controls-bar" id="webgl-camera-bar">
-              <div class="camera-btn-group">
-                <span class="camera-bar-label">Sudut Kamera:</span>
-                <button class="cam-preset-btn active" data-preset="default">Arsitek</button>
-                <button class="cam-preset-btn" data-preset="front">Frontal</button>
-                <button class="cam-preset-btn" data-preset="angle">45° Sudut</button>
-                <button class="cam-preset-btn" data-preset="top">Isometrik</button>
-              </div>
-              <div class="camera-btn-group">
-                <button class="cam-preset-btn" id="toggle-autorotate-btn">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
-                  </svg>
-                  <span>Tur 360°</span>
-                </button>
-                <button class="cam-preset-btn" id="reset-camera-btn">Reset Kamera</button>
-              </div>
-            </div>
-
-            <!-- Floating Navigation Interaction Hint -->
-            <div class="webgl-interaction-hint" id="webgl-hint">
-              Klik-Tahan &amp; Geser untuk Rotasi 3D &bull; Scroll untuk Zoom &bull; Klik Bidang untuk Salin Warna
-            </div>
-
-            <!-- Floating HUD Inspector Material & Rasio -->
-            <div class="surface-inspector-hud" id="surface-inspector-hud">
-              Arahkan kursor atau sentuh bidang arsitektural untuk inspeksi material, rasio, dan LRV
-            </div>
-
-            <!-- ==========================================================
-                 MODEL 1: KAMAR TIDUR UTAMA (PERSPEKTIF 3D INTERIOR)
-                 ========================================================== -->
-            <div class="arch-scene-wrapper" id="scene-bedroom">
-              <svg id="scene-bedroom-svg" class="arch-3d-scene-svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                  <filter id="bed-shadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(15,23,42,0.4)" />
-                  </filter>
-                  <filter id="headboard-shadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="6" dy="8" stdDeviation="12" flood-color="rgba(15,23,42,0.35)" />
-                  </filter>
-                  <filter id="bed-cove-glow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="8" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                  </filter>
-                  <filter id="bed-sconce-glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="18" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                  </filter>
-                  <linearGradient id="bed-sunbeam" x1="100%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="rgba(255, 250, 220, 0.55)" />
-                    <stop offset="45%" stop-color="rgba(255, 245, 200, 0.22)" />
-                    <stop offset="100%" stop-color="rgba(255, 255, 255, 0.0)" />
-                  </linearGradient>
-                  <linearGradient id="bed-sky" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#38bdf8" />
-                    <stop offset="60%" stop-color="#bae6fd" />
-                    <stop offset="100%" stop-color="#e0f2fe" />
-                  </linearGradient>
-                  <linearGradient id="bed-parquet" x1="50%" y1="0%" x2="50%" y2="100%">
-                    <stop offset="0%" stop-color="#a07148" />
-                    <stop offset="40%" stop-color="#b88458" />
-                    <stop offset="100%" stop-color="#8a5a32" />
-                  </linearGradient>
-                  <linearGradient id="bed-crease-shadow-left" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="rgba(0, 0, 0, 0.38)" />
-                    <stop offset="100%" stop-color="rgba(0, 0, 0, 0.0)" />
-                  </linearGradient>
-                  <linearGradient id="bed-crease-shadow-right" x1="100%" y1="0%" x2="0%" y2="0%">
-                    <stop offset="0%" stop-color="rgba(0, 0, 0, 0.30)" />
-                    <stop offset="100%" stop-color="rgba(0, 0, 0, 0.0)" />
-                  </linearGradient>
-                  <linearGradient id="bed-cone-light" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="rgba(255, 255, 255, 0.85)" />
-                    <stop offset="100%" stop-color="rgba(255, 255, 255, 0.0)" />
-                  </linearGradient>
-                </defs>
-
-                <!-- Plafon Emulsi Perspektif 3D (10%) -->
-                <polygon points="0,0 1000,0 780,85 240,85" fill="var(--spec-ceiling, #F8FAFC)" class="arch-surface" data-surface="ceiling" data-surface-name="Plafon & Lis Emulsi (10%)" />
-                <!-- Drop Tray Recess & Cove Light -->
-                <polygon points="120,18 880,18 730,68 280,68" fill="rgba(0,0,0,0.06)" />
-                <polygon points="110,15 890,15 740,70 270,70" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="4" filter="url(#bed-cove-glow)" class="arch-cove-light" />
-                <!-- Spot Downlights Cones -->
-                <g class="arch-downlight-group">
-                  <ellipse cx="440" cy="72" rx="7" ry="2.5" fill="#ffffff" />
-                  <polygon points="433,74 447,74 520,380 360,380" fill="url(#bed-cone-light)" opacity="0.18" />
-                  <ellipse cx="640" cy="72" rx="7" ry="2.5" fill="#ffffff" />
-                  <polygon points="633,74 647,74 720,380 560,380" fill="url(#bed-cone-light)" opacity="0.18" />
-                </g>
-
-                <!-- Dinding Utama Belakang (60%) -->
-                <polygon points="240,85 780,85 780,445 240,445" fill="var(--spec-main, #DAD7CD)" class="arch-surface" data-surface="main" data-surface-name="Dinding Utama Perimeter (60%)" />
-                <!-- Sudut Ambient Occlusion Shadows -->
-                <rect x="240" y="85" width="45" height="360" fill="url(#bed-crease-shadow-left)" opacity="0.45" />
-                <rect x="735" y="85" width="45" height="360" fill="url(#bed-crease-shadow-right)" opacity="0.35" />
-                <polygon points="240,85 780,85 780,105 240,105" fill="rgba(0,0,0,0.12)" />
-
-                <!-- Lukisan Kanvas Arsitektural Terbingkai -->
-                <g filter="url(#bed-shadow)">
-                  <rect x="360" y="115" width="160" height="110" rx="3" fill="#ffffff" stroke="var(--spec-frame, #344E41)" stroke-width="4" />
-                  <rect x="366" y="121" width="148" height="98" fill="#f8fafc" />
-                  <circle cx="420" cy="170" r="30" fill="var(--spec-accent, #588157)" opacity="0.85" />
-                  <path d="M410 140 L490 200 L430 210 Z" fill="var(--spec-detail, #A3B18A)" opacity="0.8" />
-                  <circle cx="470" cy="155" r="14" fill="#d97706" opacity="0.75" />
-                  <path d="M366 121 L440 121 L380 219 L366 219 Z" fill="rgba(255,255,255,0.25)" />
-                </g>
-
-                <!-- Dinding Aksen Kiri Perspektif 3D (30%) -->
-                <polygon points="0,0 240,85 240,445 0,580" fill="var(--spec-accent, #588157)" class="arch-surface" data-surface="accent" data-surface-name="Dinding Aksen Kepala Ranjang (30%)" />
-                <!-- Tekstur Slat Kayu Vertikal Perspektif -->
-                <g opacity="0.18" stroke="#000000" stroke-width="2">
-                  <line x1="20" y1="48" x2="20" y2="568" />
-                  <line x1="45" y1="52" x2="45" y2="555" />
-                  <line x1="72" y1="56" x2="72" y2="540" />
-                  <line x1="102" y1="61" x2="102" y2="522" />
-                  <line x1="134" y1="66" x2="134" y2="505" />
-                  <line x1="168" y1="72" x2="168" y2="485" />
-                  <line x1="204" y1="78" x2="204" y2="465" />
-                </g>
-                <!-- Sconce Dinding Arsitektural -->
-                <g class="arch-sconce-group">
-                  <ellipse cx="120" cy="210" rx="14" ry="24" fill="rgba(255, 240, 200, 0.4)" filter="url(#bed-sconce-glow)" />
-                  <rect x="116" y="195" width="8" height="30" rx="4" fill="var(--spec-frame, #344E41)" />
-                  <circle cx="120" cy="210" r="5" fill="#ffffff" />
-                </g>
-
-                <!-- Dinding Kanan & Jendela Bukaan Lebar -->
-                <polygon points="780,85 1000,0 1000,580 780,445" fill="var(--spec-main, #DAD7CD)" opacity="0.9" class="arch-surface" data-surface="main" />
-                <!-- Kusen & Kaca Jendela Arsitektural -->
-                <g filter="url(#bed-shadow)">
-                  <polygon points="815,115 975,45 975,535 815,425" fill="var(--spec-frame, #344E41)" class="arch-surface" data-surface="frame" data-surface-name="Kusen Bukaan Jendela" />
-                  <polygon points="822,122 968,54 968,526 822,418" fill="url(#bed-sky)" />
-                  <path d="M830 380 Q870 280 910 320 T960 260 L968 526 L822 418 Z" fill="#047857" opacity="0.65" />
-                  <polygon points="888,88 894,86 894,472 888,474" fill="var(--spec-frame, #344E41)" />
-                  <polygon points="822,270 968,202 968,208 822,276" fill="var(--spec-frame, #344E41)" />
-                  <polygon points="830,125 900,95 930,300 850,340" fill="rgba(255,255,255,0.22)" />
-                  <!-- Tirai Linen Semu Jatuh Bergelombang -->
-                  <path d="M810 110 C825 150, 798 250, 815 320 C825 360, 802 410, 812 435 L795 430 C785 390, 808 340, 796 280 C785 220, 808 140, 795 105 Z" fill="#ffffff" opacity="0.88" />
-                </g>
-
-                <!-- Lantai Parket Kayu Oak dalam Perspektif 3D -->
-                <polygon points="0,580 240,445 780,445 1000,580" fill="url(#bed-parquet)" />
-                <g stroke="rgba(0,0,0,0.18)" stroke-width="1.2">
-                  <line x1="240" y1="445" x2="0" y2="580" />
-                  <line x1="310" y1="445" x2="140" y2="580" />
-                  <line x1="380" y1="445" x2="280" y2="580" />
-                  <line x1="450" y1="445" x2="420" y2="580" />
-                  <line x1="520" y1="445" x2="560" y2="580" />
-                  <line x1="590" y1="445" x2="700" y2="580" />
-                  <line x1="660" y1="445" x2="840" y2="580" />
-                  <line x1="730" y1="445" x2="980" y2="580" />
-                  <line x1="780" y1="445" x2="1000" y2="580" />
-                </g>
-                <!-- Baseboard Lisplang Bawah -->
-                <polygon points="240,445 780,445 780,449 240,449" fill="var(--spec-ceiling, #ffffff)" />
-                <polygon points="0,580 240,445 240,449 0,585" fill="var(--spec-ceiling, #ffffff)" />
-
-                <!-- Berkas Sinar Matahari Masuk (Ray Tracing) -->
-                <polygon points="822,230 968,160 760,565 340,510" fill="url(#bed-sunbeam)" class="arch-sunbeam-polygon" id="bed-sunbeam-ray" />
-
-                <!-- Karpet Area Tekstil -->
-                <polygon points="190,438 670,438 730,555 130,555" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" filter="url(#bed-shadow)" />
-                <g stroke="rgba(148,163,184,0.3)" stroke-width="1" stroke-dasharray="3,3">
-                  <line x1="175" y1="465" x2="685" y2="465" />
-                  <line x1="160" y1="495" x2="700" y2="495" />
-                  <line x1="145" y1="525" x2="715" y2="525" />
-                </g>
-
-                <!-- Furnitur Ranjang Utama (Master Bed 3D) -->
-                <g id="master-bed-assembly">
-                  <polygon points="250,515 640,515 620,535 270,535" fill="rgba(0,0,0,0.4)" filter="url(#bed-shadow)" />
-                  <!-- Headboard Tufted (Warna Aksen 30%) -->
-                  <g filter="url(#headboard-shadow)">
-                    <polygon points="280,240 600,240 600,430 280,430" fill="var(--spec-accent, #588157)" class="arch-surface" data-surface="accent" />
-                    <line x1="360" y1="240" x2="360" y2="430" stroke="rgba(0,0,0,0.22)" stroke-width="3" />
-                    <line x1="440" y1="240" x2="440" y2="430" stroke="rgba(0,0,0,0.22)" stroke-width="3" />
-                    <line x1="520" y1="240" x2="520" y2="430" stroke="rgba(0,0,0,0.22)" stroke-width="3" />
-                    <polygon points="280,240 600,240 600,246 280,246" fill="rgba(255,255,255,0.25)" />
-                  </g>
-                  <!-- Rangka Kayu Ranjang (Warna Frame) -->
-                  <polygon points="275,405 605,405 635,495 245,495" fill="var(--spec-frame, #344E41)" class="arch-surface" data-surface="frame" />
-                  <!-- Kasur & Linen Putih -->
-                  <polygon points="285,385 595,385 625,465 255,465" fill="#f8fafc" />
-                  <polygon points="255,465 625,465 620,485 250,485" fill="#e2e8f0" />
-                  <!-- Duvet / Bedspread (Warna Detail 5) -->
-                  <g filter="url(#bed-shadow)">
-                    <polygon points="285,410 595,410 630,488 250,488" fill="var(--spec-detail, #A3B18A)" class="arch-surface" data-surface="detail" data-surface-name="Tekstil Bedding & Detail" />
-                    <polygon points="285,405 595,405 598,422 282,422" fill="#ffffff" />
-                    <line x1="265" y1="450" x2="615" y2="450" stroke="rgba(0,0,0,0.12)" stroke-width="3" />
-                  </g>
-                  <!-- 4 Bantal Tidur Empuk 3D -->
-                  <g filter="url(#bed-shadow)">
-                    <rect x="310" y="330" width="125" height="60" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-                    <rect x="450" y="330" width="125" height="60" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
-                    <rect x="325" y="355" width="105" height="50" rx="6" fill="var(--spec-accent, #588157)" />
-                    <rect x="465" y="355" width="105" height="50" rx="6" fill="var(--spec-accent, #588157)" />
-                  </g>
-                  <!-- Meja Samping Ranjang Kiri -->
-                  <g filter="url(#bed-shadow)">
-                    <polygon points="205,395 270,395 260,455 195,455" fill="var(--spec-frame, #344E41)" />
-                    <polygon points="195,405 205,395 260,395 250,405" fill="rgba(255,255,255,0.18)" />
-                    <ellipse cx="230" cy="392" rx="10" ry="4" fill="#d4af37" />
-                    <line x1="230" y1="392" x2="230" y2="350" stroke="#0f172a" stroke-width="2.5" />
-                    <polygon points="215,355 245,355 250,335 210,335" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
-                    <polygon points="210,355 250,355 285,420 175,420" fill="rgba(255, 235, 180, 0.28)" class="arch-downlight-group" />
-                  </g>
-                  <!-- Meja Samping Ranjang Kanan -->
-                  <g filter="url(#bed-shadow)">
-                    <polygon points="615,395 675,395 690,455 630,455" fill="var(--spec-frame, #344E41)" />
-                    <rect x="635" y="388" width="22" height="7" rx="1" fill="#be185d" />
-                    <ellipse cx="660" cy="385" rx="6" ry="6" fill="#059669" />
-                  </g>
-                </g>
-              </svg>
-            </div>
-
-            <!-- ==========================================================
-                 MODEL 2: FASAD RUMAH MODERN (PERSPEKTIF 3D EKSTERIOR)
-                 ========================================================== -->
-            <div class="arch-scene-wrapper" id="scene-facade" style="display: none;">
-              <svg id="scene-facade-svg" class="arch-3d-scene-svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                  <linearGradient id="facade-sky-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#0284c7" />
-                    <stop offset="50%" stop-color="#7dd3fc" />
-                    <stop offset="100%" stop-color="#f0f9ff" />
-                  </linearGradient>
-                  <linearGradient id="facade-ground-grad" x1="50%" y1="0%" x2="50%" y2="100%">
-                    <stop offset="0%" stop-color="#475569" />
-                    <stop offset="100%" stop-color="#1e293b" />
-                  </linearGradient>
-                  <filter id="facade-shadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="rgba(15,23,42,0.45)" />
-                  </filter>
-                  <linearGradient id="glass-sky-reflect" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="rgba(186, 230, 253, 0.9)" />
-                    <stop offset="50%" stop-color="rgba(56, 189, 248, 0.6)" />
-                    <stop offset="100%" stop-color="rgba(30, 58, 138, 0.7)" />
-                  </linearGradient>
-                </defs>
-
-                <!-- Langit Eksterior -->
-                <rect x="0" y="0" width="1000" height="380" fill="url(#facade-sky-grad)" />
-
-                <!-- Pelataran Paving & Jalan Masuk Eksterior -->
-                <polygon points="0,380 1000,380 1000,580 0,580" fill="url(#facade-ground-grad)" />
-                <g stroke="rgba(255,255,255,0.12)" stroke-width="1.5">
-                  <line x1="0" y1="430" x2="1000" y2="430" />
-                  <line x1="0" y1="490" x2="1000" y2="490" />
-                  <line x1="0" y1="550" x2="1000" y2="550" />
-                  <line x1="200" y1="380" x2="100" y2="580" />
-                  <line x1="450" y1="380" x2="400" y2="580" />
-                  <line x1="700" y1="380" x2="720" y2="580" />
-                  <line x1="900" y1="380" x2="950" y2="580" />
-                </g>
-
-                <!-- RUMAH MODERN: LANTAI 1 & 2 DALAM PERSPEKTIF 3/4 -->
-
-                <!-- Dinding Eksterior Utama Lantai 1 (60%) -->
-                <polygon points="320,190 850,190 850,420 320,420" fill="var(--spec-main, #E4E4E7)" class="arch-surface" data-surface="main" data-surface-name="Dinding Utama Eksterior (60%)" />
-
-                <!-- Kolom & Tower Aksen Fasad Focal (30%) -->
-                <polygon points="150,80 320,130 320,420 150,420" fill="var(--spec-accent, #27272A)" class="arch-surface" data-surface="accent" data-surface-name="Focal Tower Aksen Fasad (30%)" filter="url(#facade-shadow)" />
-                <!-- Tekstur Kisi Slat Kayu / Relief Batu pada Tower Aksen -->
-                <g stroke="rgba(255,255,255,0.16)" stroke-width="2">
-                  <line x1="170" y1="95" x2="170" y2="420" />
-                  <line x1="195" y1="102" x2="195" y2="420" />
-                  <line x1="220" y1="109" x2="220" y2="420" />
-                  <line x1="245" y1="116" x2="245" y2="420" />
-                  <line x1="270" y1="123" x2="270" y2="420" />
-                  <line x1="295" y1="130" x2="295" y2="420" />
-                </g>
-
-                <!-- LANTAI 2 KANTILEVER MODERN PROTRUDING FORWARD -->
-                <g filter="url(#facade-shadow)">
-                  <!-- Bayangan Jatuh Cantilever ke Lantai 1 -->
-                  <polygon points="300,190 860,190 860,225 300,225" fill="rgba(0,0,0,0.4)" />
-
-                  <!-- Kubus Volume Lantai 2 (Dinding Utama 60%) -->
-                  <polygon points="300,60 860,60 860,190 300,190" fill="var(--spec-main, #E4E4E7)" class="arch-surface" data-surface="main" />
-
-                  <!-- Overhang Kanopi Atap & Fascia Trim (10%) -->
-                  <polygon points="280,42 880,42 880,62 280,62" fill="var(--spec-ceiling, #FFFFFF)" class="arch-surface" data-surface="ceiling" data-surface-name="Lisplang & Overhang Kanopi (10%)" />
-                  <polygon points="280,62 880,62 880,68 280,68" fill="#0f172a" />
-                  <!-- Downlights di Bawah Overhang -->
-                  <circle cx="380" cy="65" r="4" fill="#ffffff" />
-                  <circle cx="560" cy="65" r="4" fill="#ffffff" />
-                  <circle cx="740" cy="65" r="4" fill="#ffffff" />
-
-                  <!-- Jendela Ribbon Lantai 2 -->
-                  <rect x="340" y="85" width="480" height="75" rx="3" fill="var(--spec-frame, #18181B)" class="arch-surface" data-surface="frame" data-surface-name="Kusen Jendela Eksterior" />
-                  <rect x="348" y="92" width="464" height="61" fill="url(#glass-sky-reflect)" />
-                  <line x1="500" y1="85" x2="500" y2="160" stroke="var(--spec-frame, #18181B)" stroke-width="4" />
-                  <line x1="660" y1="85" x2="660" y2="160" stroke="var(--spec-frame, #18181B)" stroke-width="4" />
-                  <!-- Balustrade Kaca Minimalis -->
-                  <rect x="330" y="165" width="500" height="25" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" />
-                </g>
-
-                <!-- LANTAI 1: PINTU PIVOT UTAMA & JENDELA CURTAIN WALL -->
-                <!-- Curtain Wall Kaca Lantai 1 -->
-                <rect x="350" y="235" width="220" height="175" rx="4" fill="var(--spec-frame, #18181B)" class="arch-surface" data-surface="frame" />
-                <rect x="358" y="242" width="204" height="161" fill="url(#glass-sky-reflect)" />
-                <line x1="452" y1="235" x2="452" y2="410" stroke="var(--spec-frame, #18181B)" stroke-width="4" />
-                <line x1="358" y1="320" x2="562" y2="320" stroke="var(--spec-frame, #18181B)" stroke-width="3" />
-
-                <!-- Pintu Pivot Masuk Kontemporer (Warna Detail 5 / Pintu) -->
-                <g filter="url(#facade-shadow)">
-                  <rect x="610" y="235" width="130" height="185" rx="3" fill="var(--spec-frame, #18181B)" class="arch-surface" data-surface="frame" />
-                  <rect x="620" y="243" width="112" height="177" fill="var(--spec-detail, #B45309)" class="arch-surface" data-surface="detail" data-surface-name="Pintu Masuk Pivot (Detail)" />
-                  <!-- Vertical Long Architectural Handle -->
-                  <rect x="715" y="295" width="6" height="75" rx="3" fill="#f8fafc" stroke="#64748b" stroke-width="1" />
-                </g>
-
-                <!-- Teras Tangga Melayang & LED Underglow -->
-                <polygon points="560,420 780,420 810,445 530,445" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
-                <line x1="535" y1="446" x2="805" y2="446" stroke="#f59e0b" stroke-width="3" filter="url(#facade-shadow)" />
-                <polygon points="520,445 820,445 850,470 490,470" fill="#cbd5e1" />
-
-                <!-- Tanaman Arsitektur dalam Pot Geometris (Agave & Snake Plant) -->
-                <g>
-                  <!-- Planter Concrete Box -->
-                  <polygon points="210,380 290,380 280,450 200,450" fill="#334155" stroke="#1e293b" stroke-width="2" />
-                  <!-- Tanaman Snake Plant Hijau Mewah -->
-                  <path d="M225 380 Q215 320 220 290 Q235 330 235 380 Z" fill="#059669" />
-                  <path d="M245 380 Q245 300 255 270 Q265 320 260 380 Z" fill="#10b981" />
-                  <path d="M265 380 Q275 315 285 285 Q285 335 275 380 Z" fill="#047857" />
-                </g>
-              </svg>
-            </div>
-
-            <!-- ==========================================================
-                 MODEL 3: RUANG TAMU & TV SLAT (PERSPEKTIF 3D INTERIOR)
-                 ========================================================== -->
-            <div class="arch-scene-wrapper" id="scene-living" style="display: none;">
-              <svg id="scene-living-svg" class="arch-3d-scene-svg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                  <filter id="tv-bias-glow" x="-40%" y="-40%" width="180%" height="180%">
-                    <feGaussianBlur stdDeviation="22" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                  </filter>
-                  <linearGradient id="living-marble" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#f8fafc" />
-                    <stop offset="50%" stop-color="#e2e8f0" />
-                    <stop offset="100%" stop-color="#f1f5f9" />
-                  </linearGradient>
-                </defs>
-
-                <!-- Plafon Tinggi Ruang Tamu (10%) -->
-                <polygon points="0,0 1000,0 800,75 220,75" fill="var(--spec-ceiling, #FFFFFF)" class="arch-surface" data-surface="ceiling" data-surface-name="Plafon Akustik Modern (10%)" />
-                <!-- Linear Magnetic Track Light Rail -->
-                <polygon points="340,45 680,45 660,52 320,52" fill="#0f172a" />
-                <rect x="360" y="52" width="18" height="12" rx="2" fill="#334155" />
-                <rect x="480" y="52" width="18" height="12" rx="2" fill="#334155" />
-                <rect x="600" y="52" width="18" height="12" rx="2" fill="#334155" />
-                <!-- Downlight Light Cones -->
-                <polygon points="360,64 378,64 450,380 280,380" fill="url(#bed-cone-light)" opacity="0.16" />
-                <polygon points="480,64 498,64 570,380 400,380" fill="url(#bed-cone-light)" opacity="0.16" />
-
-                <!-- Dinding Utama Belakang (60%) -->
-                <polygon points="220,75 800,75 800,450 220,450" fill="var(--spec-main, #EFECE6)" class="arch-surface" data-surface="main" data-surface-name="Dinding Utama Perimeter (60%)" />
-
-                <!-- DINDING AKSEN FOCAL SLAT WOOD KIRI PERSPEKTIF (30%) -->
-                <polygon points="0,0 220,75 220,450 0,580" fill="var(--spec-accent, #525946)" class="arch-surface" data-surface="accent" data-surface-name="Backdrop Kisi Kayu Akustik (30%)" />
-                <!-- Garis-Garis Slat Kayu Relief Akustik -->
-                <g stroke="rgba(0,0,0,0.22)" stroke-width="2.5">
-                  <line x1="18" y1="45" x2="18" y2="565" />
-                  <line x1="40" y1="50" x2="40" y2="550" />
-                  <line x1="64" y1="54" x2="64" y2="532" />
-                  <line x1="90" y1="59" x2="90" y2="515" />
-                  <line x1="120" y1="64" x2="120" y2="495" />
-                  <line x1="152" y1="69" x2="152" y2="478" />
-                  <line x1="186" y1="74" x2="186" y2="460" />
-                </g>
-
-                <!-- PINTU / PORTAL AKSEN RUANG (Warna Detail / Kusen) -->
-                <polygon points="250,180 340,180 340,448 250,448" fill="var(--spec-frame, #2E3326)" class="arch-surface" data-surface="frame" />
-                <polygon points="256,188 334,188 334,448 256,448" fill="var(--spec-detail, #C7B299)" class="arch-surface" data-surface="detail" data-surface-name="Pintu / Panel Kayu (Detail)" />
-
-                <!-- LAYAR TV OLED 75 INCH DENGAN AMBIENT BIAS BACKLIGHT GLOW -->
-                <g filter="url(#bed-shadow)">
-                  <!-- Bias Light Glow di Belakang TV -->
-                  <rect x="70" y="160" width="135" height="150" fill="rgba(255, 235, 180, 0.45)" filter="url(#tv-bias-glow)" />
-                  <!-- TV Body Ultra-Slim -->
-                  <polygon points="50,170 190,195 190,320 50,295" fill="#090d16" stroke="#1e293b" stroke-width="3" />
-                  <!-- Layar TV Ambient Reflection -->
-                  <polygon points="56,176 184,199 184,314 56,291" fill="#0f172a" />
-                  <polygon points="56,176 120,187 80,300 56,291" fill="rgba(255,255,255,0.12)" />
-                </g>
-
-                <!-- Floating Media Credenza Console (Warna Detail 5) -->
-                <g filter="url(#bed-shadow)">
-                  <polygon points="30,340 210,360 210,395 30,375" fill="var(--spec-detail, #C7B299)" class="arch-surface" data-surface="detail" data-surface-name="Floating Media Credenza" />
-                  <polygon points="30,335 210,355 200,360 20,340" fill="rgba(255,255,255,0.25)" />
-                </g>
-
-                <!-- Dinding Kanan & Pintu Geser Kaca Panorama -->
-                <polygon points="800,75 1000,0 1000,580 800,450" fill="var(--spec-main, #EFECE6)" opacity="0.9" class="arch-surface" data-surface="main" />
-                <g filter="url(#bed-shadow)">
-                  <polygon points="825,100 980,35 980,540 825,435" fill="var(--spec-frame, #2E3326)" class="arch-surface" data-surface="frame" />
-                  <polygon points="832,108 972,44 972,532 832,427" fill="url(#bed-sky)" />
-                  <path d="M840 400 Q880 300 920 340 T970 280 L972 532 L832 427 Z" fill="#047857" opacity="0.65" />
-                  <polygon points="832,110 900,80 940,300 860,340" fill="rgba(255,255,255,0.22)" />
-                </g>
-
-                <!-- Lantai Marmer Putih Statuario Mewah -->
-                <polygon points="0,580 220,450 800,450 1000,580" fill="url(#living-marble)" />
-                <!-- Pola Sambungan Ubin Marmer Diagonal & Urat Halus -->
-                <g stroke="rgba(148,163,184,0.3)" stroke-width="1.2">
-                  <line x1="220" y1="450" x2="0" y2="580" />
-                  <line x1="365" y1="450" x2="250" y2="580" />
-                  <line x1="510" y1="450" x2="500" y2="580" />
-                  <line x1="655" y1="450" x2="750" y2="580" />
-                  <line x1="800" y1="450" x2="1000" y2="580" />
-                  <line x1="110" y1="515" x2="900" y2="515" stroke-dasharray="3,3" />
-                </g>
-
-                <!-- Sofa Lounge Minimalis Kontemporer -->
-                <g filter="url(#bed-shadow)">
-                  <!-- Dudukan Sofa -->
-                  <polygon points="380,430 750,430 770,515 350,515" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-                  <!-- Sandaran Punggung Sofa -->
-                  <polygon points="390,370 740,370 750,435 380,435" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
-                  <!-- Bantal Sofa Aksen (Warna Aksen 30%) -->
-                  <rect x="420" y="390" width="60" height="40" rx="6" fill="var(--spec-accent, #525946)" />
-                  <rect x="660" y="390" width="60" height="40" rx="6" fill="var(--spec-accent, #525946)" />
-                </g>
-
-                <!-- Meja Kopi Bulat Marmer (Coffee Table) -->
-                <g filter="url(#bed-shadow)">
-                  <ellipse cx="560" cy="520" rx="75" ry="25" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
-                  <ellipse cx="560" cy="520" rx="72" ry="23" fill="url(#living-marble)" />
-                  <ellipse cx="555" cy="518" rx="16" ry="6" fill="#d4af37" opacity="0.8" />
-                </g>
-              </svg>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Rincian Data Lapisan Cat Bidang -->
-        <div class="colorimetric-data-row">
-          <div class="colorimetric-grid" id="room-legend">
-            <!-- Rendered by JS -->
-          </div>
-          <div class="elevation-action-group">
-            <button class="btn btn-outline" id="send-to-compare-a-btn">Set Komparasi Opsi A</button>
-            <button class="btn btn-outline" id="send-to-compare-b-btn">Set Komparasi Opsi B</button>
-            <button class="btn btn-primary" id="open-spec-modal-btn">Lembar Spesifikasi Teknis</button>
-          </div>
-        </div>
-
-        <!-- Kalkulator Presisi 60-30-10 & Volume Cat -->
-        <div class="paint-metering-engine">
-          <div class="engine-title-wrap">
-            <div class="engine-title">Kalkulator Volumetrik Cat (Formula Cakupan 11 m²/Liter)</div>
-            <div class="engine-sub">Perhitungan luas netto dinding setelah deduksi 15% bukaan arsitektural (kusen & jendela).</div>
-          </div>
-
-          <div class="metric-input-grid">
-            <div class="metric-input-box">
-              <label for="room-length">Panjang Ruang (m):</label>
-              <input type="number" id="room-length" value="4.0" step="0.5" min="1">
-            </div>
-            <div class="metric-input-box">
-              <label for="room-width">Lebar Ruang (m):</label>
-              <input type="number" id="room-width" value="3.0" step="0.5" min="1">
-            </div>
-            <div class="metric-input-box">
-              <label for="room-height">Tinggi Dinding (m):</label>
-              <input type="number" id="room-height" value="3.2" step="0.1" min="2">
-            </div>
-            <div class="metric-input-box">
-              <label for="paint-coats">Jumlah Lapisan (Coats):</label>
-              <select id="paint-coats">
-                <option value="2" selected>2 Lapis (Standar Dinding Rata)</option>
-                <option value="3">3 Lapis (Warna Gelap / Dinding Baru)</option>
-              </select>
+            <!-- Pilihan Tekstur Kilap Cat -->
+            <div class="finish-control-group" id="shader-selector">
+              <span class="control-label">Tekstur Kilap:</span>
+              <button class="finish-btn active" data-shader="matte">Matte Doff</button>
+              <button class="finish-btn" data-shader="satin">Satin Lembut</button>
+              <button class="finish-btn" data-shader="semigloss">Semi-Gloss</button>
             </div>
           </div>
 
-          <div class="metering-results-bar" id="calc-results">
-            <!-- Rendered by JS -->
+          <!-- Strip Proporsi Rasio Arsitektur 60-30-10 -->
+          <div class="ratio-overview-strip" id="room-ratio-visual">
+            <div class="ratio-box ratio-main" id="room-ratio-main">
+              <span class="ratio-num">60%</span>
+              <span class="ratio-desc">Dinding Utama</span>
+              <span class="ratio-hex" id="room-hex-main">#DAD7CD</span>
+            </div>
+            <div class="ratio-box ratio-accent" id="room-ratio-accent">
+              <span class="ratio-num">30%</span>
+              <span class="ratio-desc">Dinding Aksen</span>
+              <span class="ratio-hex" id="room-hex-accent">#588157</span>
+            </div>
+            <div class="ratio-box ratio-trim" id="room-ratio-ceiling">
+              <span class="ratio-num">10%</span>
+              <span class="ratio-desc">Plafon &amp; Lis</span>
+              <span class="ratio-hex" id="room-hex-ceiling">#F8FAFC</span>
+            </div>
+          </div>
+
+          <!-- Swatches Interaktif Langsung -->
+          <div class="interactive-swatches-strip" id="room-swatches-strip">
+            <!-- Dirender secara dinamis oleh JS -->
           </div>
         </div>
       </div>
-
     </section>
 
     <!-- ====================================================================
-         MODUL 3: KOMPARASI METRIK SIDE-BY-SIDE
-         ==================================================================== -->
-    <section id="tab-komparasi" class="workspace-pane">
-
-      <div class="comparison-workstation-card">
-        <div class="comparison-head">
-          <h2 class="panel-heading">Komparasi Spektral Berdampingan</h2>
-          <p class="panel-caption">Analisis komparatif dua opsi formula cat arsitektur sebelum penetapan spesifikasi material.</p>
-        </div>
-
-        <div class="comparison-selectors">
-          <div class="selector-unit">
-            <label for="select-palette-a">Formula Opsi A:</label>
-            <select id="select-palette-a" class="technical-dropdown"></select>
-          </div>
-          <div class="comparator-divider">DELTA</div>
-          <div class="selector-unit">
-            <label for="select-palette-b">Formula Opsi B:</label>
-            <select id="select-palette-b" class="technical-dropdown"></select>
-          </div>
-        </div>
-
-        <div class="comparison-viewport-grid">
-          <div class="comparison-cell" id="compare-col-a"></div>
-          <div class="comparison-cell" id="compare-col-b"></div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ====================================================================
-         MODUL 4: KALKULATOR RODA HSL & WCAG 2.2
+         TAB 3: RODA HARMONI KROMATIK (HSL ENGINE)
          ==================================================================== -->
     <section id="tab-analisis" class="workspace-pane">
+      <div class="analysis-card">
+        <div class="analysis-header">
+          <h2 class="card-title">Kalkulator Roda Harmoni Kromatik</h2>
+          <p class="card-sub">Eksplorasi hubungan harmonis warna berbasis sudut lingkaran optik HSL.</p>
+        </div>
 
-      <div class="hsl-analysis-card">
-        <div class="panel-top-row">
-          <div>
-            <h2 class="panel-heading">Analisis Spektral HSL & Harmoni Roda 360°</h2>
-            <p class="panel-caption">Kalkulasi presisi sudut trigonometri warna: Komplementer (180°), Analog (±30°), Triadik (120°), Monokromatik.</p>
+        <div class="wheel-workbench-grid">
+          <!-- Kolom Input Warna Dasar -->
+          <div class="wheel-picker-col">
+            <label class="input-label" for="base-color-picker">Titik Acuan Warna (Base Hue):</label>
+            <div class="picker-input-group">
+              <input type="color" id="base-color-picker" value="#3a5a40" class="native-color-input">
+              <input type="text" id="base-hex-text" value="#3a5a40" class="text-hex-input" maxlength="7">
+            </div>
+
+            <!-- Slider Kontrol HSL -->
+            <div class="slider-field">
+              <div class="slider-label-row">
+                <span>Sudut Hue (Warna):</span>
+                <span id="val-hue">131&deg;</span>
+              </div>
+              <input type="range" id="slider-hue" min="0" max="360" value="131" class="studio-range">
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-label-row">
+                <span>Saturasi (Kepekatan):</span>
+                <span id="val-sat">22%</span>
+              </div>
+              <input type="range" id="slider-sat" min="0" max="100" value="22" class="studio-range">
+            </div>
+
+            <div class="slider-field">
+              <div class="slider-label-row">
+                <span>Luminansi (Kecerahan):</span>
+                <span id="val-lum">29%</span>
+              </div>
+              <input type="range" id="slider-lum" min="0" max="100" value="29" class="studio-range">
+            </div>
+
+            <!-- Estimator Luas & Kebutuhan Cat -->
+            <div class="paint-calculator-box">
+              <div class="calc-header-title">Estimasi Kebutuhan Cat Ruang</div>
+              <div class="calc-inputs-grid">
+                <div>
+                  <label class="calc-micro-label">Panjang (m)</label>
+                  <input type="number" id="room-length" value="4.0" step="0.5" class="calc-input">
+                </div>
+                <div>
+                  <label class="calc-micro-label">Lebar (m)</label>
+                  <input type="number" id="room-width" value="3.5" step="0.5" class="calc-input">
+                </div>
+                <div>
+                  <label class="calc-micro-label">Tinggi (m)</label>
+                  <input type="number" id="room-height" value="3.0" step="0.1" class="calc-input">
+                </div>
+                <div>
+                  <label class="calc-micro-label">Lapisan</label>
+                  <select id="calc-coats" class="calc-input">
+                    <option value="2" selected>2 Lapis</option>
+                    <option value="3">3 Lapis</option>
+                  </select>
+                </div>
+              </div>
+              <div id="paint-volume-results" class="calc-results-row">
+                <!-- Dirender oleh JS -->
+              </div>
+            </div>
           </div>
-          <button class="btn btn-primary" id="save-current-harmony-btn">
-            + Arsipkan Formula ke Workspace
+
+          <!-- Kolom Output Harmoni -->
+          <div class="wheel-schemes-col">
+            <div class="harmony-cluster">
+              <div class="harmony-type-heading">Kombinasi Monokromatik (Gradasi Satu Nada)</div>
+              <div class="harmony-swatches-row" id="scheme-mono"></div>
+            </div>
+
+            <div class="harmony-cluster">
+              <div class="harmony-type-heading">Kombinasi Analog (Nada Bersebelahan 30&deg;)</div>
+              <div class="harmony-swatches-row" id="scheme-analog"></div>
+            </div>
+
+            <div class="harmony-cluster">
+              <div class="harmony-type-heading">Kombinasi Komplementer (Kontras Berseberangan 180&deg;)</div>
+              <div class="harmony-swatches-row" id="scheme-comp"></div>
+            </div>
+
+            <div class="harmony-cluster">
+              <div class="harmony-type-heading">Kombinasi Triadik (Segitiga Seimbang 120&deg;)</div>
+              <div class="harmony-swatches-row" id="scheme-triad"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 4: KOLEKSI TERSIMPAN (CUSTOM VAULT)
+         ==================================================================== -->
+    <section id="tab-workspace" class="workspace-pane">
+      <div class="vault-card">
+        <div class="vault-header-row">
+          <div>
+            <h2 class="card-title">Koleksi Warna Tersimpan</h2>
+            <p class="card-sub">Daftar kombinasi warna yang Anda simpan selama eksplorasi di studio.</p>
+          </div>
+          <button class="btn btn-primary" id="create-new-palette-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span>Rancang Palet Baru</span>
           </button>
         </div>
 
-        <div class="hsl-input-control-strip">
-          <div class="datum-input-group">
-            <label for="base-color-picker">Titik Acuan Warna (Base Hue):</label>
-            <div class="input-swatch-combo">
-              <input type="color" id="base-color-picker" value="#3a5a40">
-              <input type="text" id="base-color-hex" value="#3A5A40" maxlength="7" spellcheck="false">
-            </div>
-          </div>
-
-          <div class="wcag-audit-pod">
-            <div class="wcag-label">Auditing Keterbacaan Kontras (WCAG 2.2):</div>
-            <div class="wcag-badges" id="contrast-preview">
-              <div class="wcag-chip" id="sample-white">Teks Putih: 0.0:1</div>
-              <div class="wcag-chip" id="sample-black">Teks Hitam: 0.0:1</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Panggung Visual Roda Warna Trigonometri 360° Arsitektural -->
-        <div class="color-wheel-architecture-section">
-          <div class="wheel-canvas-card">
-            <div class="wheel-canvas-wrapper">
-              <svg id="hsl-polar-wheel-svg" viewBox="0 0 320 320" class="polar-wheel-svg" width="300" height="300">
-                <defs>
-                  <filter id="node-glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(15,23,42,0.5)"/>
-                  </filter>
-                </defs>
-
-                <!-- Background Dial & Polar Drafting Grid -->
-                <circle cx="160" cy="160" r="148" fill="#f8fafc" stroke="rgba(226, 232, 240, 0.8)" stroke-width="1"/>
-                <circle cx="160" cy="160" r="132" fill="none" stroke="rgba(148, 163, 184, 0.25)" stroke-width="1" stroke-dasharray="3,3"/>
-                <circle cx="160" cy="160" r="95" fill="none" stroke="rgba(148, 163, 184, 0.2)" stroke-width="1" stroke-dasharray="2,2"/>
-                <circle cx="160" cy="160" r="58" fill="none" stroke="rgba(148, 163, 184, 0.15)" stroke-width="1"/>
-
-                <!-- Polar Axis Rays -->
-                <line x1="28" y1="160" x2="292" y2="160" stroke="rgba(148, 163, 184, 0.35)" stroke-width="1"/>
-                <line x1="160" y1="28" x2="160" y2="292" stroke="rgba(148, 163, 184, 0.35)" stroke-width="1"/>
-
-                <!-- Dynamic Spectrum Annular Segments Ring (Rendered by JS) -->
-                <g id="wheel-spectrum-ring"></g>
-
-                <!-- Harmonic Polygon / Vectors (Rendered by JS) -->
-                <g id="wheel-geometry-vectors"></g>
-
-                <!-- Interactive Radial Marker Nodes (Rendered by JS) -->
-                <g id="wheel-marker-nodes"></g>
-
-                <!-- Center Crosshair & Hue Degree Readout -->
-                <circle cx="160" cy="160" r="20" fill="#ffffff" stroke="rgba(15,23,42,0.8)" stroke-width="2"/>
-                <text x="160" y="164" text-anchor="middle" font-size="9" font-family="ui-monospace, monospace" font-weight="700" fill="#0f172a" id="wheel-center-hue-text">HUE</text>
-              </svg>
-            </div>
-
-            <div class="wheel-readout-legend">
-              <div class="legend-header">
-                <span class="legend-title">VEKTOR POLAR DERAJAT HUE (0° - 360°)</span>
-                <span class="legend-sub">Trigonometri Spektral Harmoni Warna Arsitektural</span>
-              </div>
-              <div class="legend-metrics-grid" id="wheel-legend-metrics">
-                <!-- Rendered by JS -->
-              </div>
-              <div class="legend-interactive-tip">
-                Sentuh atau klik keliling lingkaran roda untuk menggeser sudut hue warna acuan.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="harmonies-matrix">
-          <div class="harmony-node-box">
-            <div class="node-header">
-              <div class="node-title">KOMPLEMENTER</div>
-              <div class="degree-badge">Delta 180°</div>
-            </div>
-            <div class="node-body-text">Warna berlawanan langsung pada sumbu roda warna. Kontras optik maksimal untuk titik fokus arsitektur.</div>
-            <div class="swatches-strip" id="strip-complementary"></div>
-          </div>
-
-          <div class="harmony-node-box">
-            <div class="node-header">
-              <div class="node-title">ANALOG</div>
-              <div class="degree-badge">Delta ±30°</div>
-            </div>
-            <div class="node-body-text">Warna bersebelahan. Memberikan kontinuitas visual alami dan menenangkan untuk dinding ruang luas.</div>
-            <div class="swatches-strip" id="strip-analogous"></div>
-          </div>
-
-          <div class="harmony-node-box">
-            <div class="node-header">
-              <div class="node-title">TRIADIK</div>
-              <div class="degree-badge">Delta 120°</div>
-            </div>
-            <div class="node-body-text">Tiga titik berjarak sama membentuk segitiga sama sisi. Seimbang, berkarakter hidup, dan dinamis.</div>
-            <div class="swatches-strip" id="strip-triadic"></div>
-          </div>
-
-          <div class="harmony-node-box">
-            <div class="node-header">
-              <div class="node-title">MONOKROMATIK</div>
-              <div class="degree-badge">Single Hue Varied</div>
-            </div>
-            <div class="node-body-text">Variasi nilai pencahayaan dan saturasi dari satu warna acuan. Tipe desain paling aman dan murni.</div>
-            <div class="swatches-strip" id="strip-monochrome"></div>
-          </div>
+        <div class="vault-grid" id="custom-vault-grid">
+          <!-- Dirender oleh JS -->
         </div>
       </div>
-
-      <!-- Simulasi UI Digital -->
-      <div class="digital-simulation-card">
-        <div class="panel-top-row">
-          <div>
-            <h3 class="panel-heading">Verifikasi Kontras Komponen Digital</h3>
-            <p class="panel-caption">Uji implementasi warna pada elemen antarmuka aplikasi atau presentasi arsitektur digital.</p>
-          </div>
-        </div>
-
-        <div class="ui-mockup-matrix">
-          <div class="ui-panel light" id="ui-mockup-light">
-            <div class="ui-header-group">
-              <span class="ui-badge" id="mock-badge">AKSEN ARSITEKTUR</span>
-              <h4 id="mock-heading">Spesifikasi Komponen</h4>
-            </div>
-            <p id="mock-body">Pengujian keterbacaan tipografi terhadap latar belakang terang untuk memastikan kenyamanan pembaca.</p>
-            <div class="ui-cta-row">
-              <button class="mock-btn primary" id="mock-btn-primary">Aksi Terpilih</button>
-              <button class="mock-btn secondary" id="mock-btn-secondary">Detail Rinci</button>
-            </div>
-          </div>
-
-          <div class="ui-panel dark" id="ui-mockup-dark">
-            <div class="ui-header-group">
-              <span class="ui-badge dark" id="mock-badge-dark">MODE GELAP</span>
-              <h4 id="mock-heading-dark">Kompatibilitas Dark Canvas</h4>
-            </div>
-            <p id="mock-body-dark">Memverifikasi tingkat kejenuhan warna aksen agar tidak silau pada layar dengan luminansi rendah.</p>
-            <div class="ui-cta-row">
-              <button class="mock-btn primary" id="mock-btn-dark-primary">Konfirmasi</button>
-              <button class="mock-btn secondary dark" id="mock-btn-dark-secondary">Batal</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ====================================================================
-         MODUL 5: WORKSPACE MANDIRI & EKSPOR DATA
-         ==================================================================== -->
-    <section id="tab-workspace" class="workspace-pane">
-
-      <!-- Form Peracik Palet Mandiri -->
-      <div class="custom-builder-card">
-        <div class="panel-top-row">
-          <div>
-            <h2 class="panel-heading">Formulasi Palet Mandiri (Custom Specification)</h2>
-            <p class="panel-caption">Tentukan 5 nilai warna arsitektural berdasarkan hierarki 60-30-10, lalu simpan ke database lokal.</p>
-          </div>
-        </div>
-
-        <form id="create-palette-form" class="builder-form-grid">
-          <div class="builder-row">
-            <div class="builder-field flex-2">
-              <label for="custom-name">Nama Spesifikasi / Proyek:</label>
-              <input type="text" id="custom-name" placeholder="Misal: Proyek Fasad Residensi BSD" required>
-            </div>
-            <div class="builder-field flex-1">
-              <label for="custom-category">Klasifikasi Zonasi:</label>
-              <select id="custom-category">
-                <option value="Cat Kamar">Kamar Tidur</option>
-                <option value="Cat Rumah">Fasad / Eksterior</option>
-                <option value="Ruang Tamu">Ruang Tamu & Keluarga</option>
-                <option value="Dapur & Makan">Dapur & Pantri</option>
-                <option value="Ruang Kerja">Ruang Kerja / Studio</option>
-                <option value="Kamar Mandi">Kamar Mandi / Spa</option>
-                <option value="Digital / UI">Desain Grafis / Web</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="builder-field">
-            <label>Penetapan Nilai Warna Per Bidang Arsitektural:</label>
-            <div class="slots-container">
-              <div class="slot-box">
-                <span class="slot-meta-label">1. Aksen (30%)</span>
-                <input type="color" id="c-color-1" value="#588157">
-                <input type="text" class="c-hex-input" id="c-hex-1" value="#588157" maxlength="7">
-              </div>
-              <div class="slot-box">
-                <span class="slot-meta-label">2. Dinding Utama (60%)</span>
-                <input type="color" id="c-color-2" value="#DAD7CD">
-                <input type="text" class="c-hex-input" id="c-hex-2" value="#DAD7CD" maxlength="7">
-              </div>
-              <div class="slot-box">
-                <span class="slot-meta-label">3. Plafon & Lis (10%)</span>
-                <input type="color" id="c-color-3" value="#F8FAFC">
-                <input type="text" class="c-hex-input" id="c-hex-3" value="#F8FAFC" maxlength="7">
-              </div>
-              <div class="slot-box">
-                <span class="slot-meta-label">4. Kusen & Bukaan</span>
-                <input type="color" id="c-color-4" value="#344E41">
-                <input type="text" class="c-hex-input" id="c-hex-4" value="#344E41" maxlength="7">
-              </div>
-              <div class="slot-box">
-                <span class="slot-meta-label">5. Pintu / Detail</span>
-                <input type="color" id="c-color-5" value="#A3B18A">
-                <input type="text" class="c-hex-input" id="c-hex-5" value="#A3B18A" maxlength="7">
-              </div>
-            </div>
-          </div>
-
-          <div class="builder-field">
-            <label for="custom-desc">Instruksi Teknis & Ketentuan Finishing Permukaan:</label>
-            <input type="text" id="custom-desc" placeholder="Contoh: Dinding utama matte washability tinggi, kusen semi-gloss outdoor polyurethane.">
-          </div>
-
-          <div class="builder-action-bar">
-            <button type="submit" class="btn btn-primary">Simpan ke Database Lokal</button>
-            <button type="button" class="btn btn-outline" id="btn-randomize-custom">Generate Spektrum Acak</button>
-          </div>
-        </form>
-      </div>
-
-      <!-- Daftar Koleksi Ciptaan & Ekspor Data -->
-      <div class="saved-vault-card">
-        <div class="panel-top-row">
-          <div>
-            <h2 class="panel-heading">Database Proyek Mandiri & Favorit</h2>
-            <p class="panel-caption">Arsip formula tersimpan pada persistent local storage peramban.</p>
-          </div>
-          <div class="vault-tools-group">
-            <button class="btn btn-outline" id="export-all-data-btn">Ekspor Schema JSON</button>
-            <button class="btn btn-outline danger-btn" id="clear-all-custom-btn">Kosongkan Database</button>
-          </div>
-        </div>
-
-        <div class="architectural-catalog-grid" id="custom-palettes-container">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-
     </section>
 
   </main>
 
-  <!-- Modal Spesifikasi Teknis Cetak -->
-  <div id="spec-modal" class="modal-backdrop">
-    <div class="modal-dialog">
+  <!-- Notifikasi Toast Mengambang Minimalis -->
+  <div id="toast" class="studio-toast" role="alert">Kode HEX berhasil disalin</div>
+
+  <!-- Dialog Modal Perancang Palet Kustom -->
+  <div id="custom-palette-modal" class="studio-modal-backdrop" aria-hidden="true">
+    <div class="studio-modal-card">
       <div class="modal-head">
-        <div>
-          <div class="modal-classification">LEMBAR SPESIFIKASI TEKNIS &bull; DIVISI FINISHING ARSITEKTURAL</div>
-          <h3 class="modal-title" id="modal-palette-title">Spesifikasi Cat & Formulasi Bidang</h3>
-          <p class="modal-caption" id="modal-palette-sub">Rekomendasi tipe resin, tingkat kilap (sheen level), dan batas toleransi kadar air.</p>
+        <h3 class="modal-title">Rancang Palet Warna Kustom</h3>
+        <button class="modal-close-btn" id="close-custom-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-field">
+          <label class="modal-label" for="custom-palette-name">Nama Palet:</label>
+          <input type="text" id="custom-palette-name" placeholder="Misal: Japandi Minimalis & Warm Oak" class="modal-input">
         </div>
-        <button class="modal-close-trigger" id="modal-close-btn" aria-label="Tutup Modal">&times;</button>
+        <div class="modal-field">
+          <label class="modal-label" for="custom-palette-room">Peruntukan Ruang:</label>
+          <select id="custom-palette-room" class="modal-input">
+            <option value="cat-kamar">Kamar Tidur</option>
+            <option value="cat-rumah">Fasad Eksterior</option>
+            <option value="cat-ruang-tamu">Ruang Tamu &amp; Keluarga</option>
+            <option value="cat-dapur">Dapur &amp; Pantri</option>
+            <option value="cat-kerja">Ruang Kerja / Studio</option>
+            <option value="cat-mandi">Kamar Mandi / Spa</option>
+          </select>
+        </div>
+        <div class="modal-field">
+          <label class="modal-label">Pilih 5 Warna Komposisi:</label>
+          <div class="custom-colors-picker-grid">
+            <div class="picker-item">
+              <label>Dinding Utama (60%)</label>
+              <input type="color" id="cp-color-1" value="#E5E5E5">
+            </div>
+            <div class="picker-item">
+              <label>Dinding Aksen (30%)</label>
+              <input type="color" id="cp-color-0" value="#2C3E50">
+            </div>
+            <div class="picker-item">
+              <label>Plafon / Lis (10%)</label>
+              <input type="color" id="cp-color-2" value="#FFFFFF">
+            </div>
+            <div class="picker-item">
+              <label>Kusen Pintu</label>
+              <input type="color" id="cp-color-3" value="#1A252F">
+            </div>
+            <div class="picker-item">
+              <label>Aksen Detail</label>
+              <input type="color" id="cp-color-4" value="#7F8C8D">
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="modal-body-area" id="modal-body-content">
-        <!-- Rendered by JS -->
-      </div>
-
       <div class="modal-foot">
-        <button class="btn btn-outline" id="copy-css-vars-btn">Salin Format CSS Variables</button>
-        <button class="btn btn-outline" id="copy-tailwind-btn">Salin Format Tailwind Config</button>
-        <button class="btn btn-primary" onclick="window.print()">Cetak Dokumen Resmi (PDF)</button>
+        <button class="btn btn-outline" id="cancel-custom-modal">Batal</button>
+        <button class="btn btn-primary" id="save-custom-palette-btn">Simpan ke Koleksi</button>
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification Sederhana -->
-  <div id="toast" class="system-toast" role="alert">Kode HEX berhasil disalin</div>
-
-  <!-- Footer Sistem -->
-  <footer class="app-footer">
-    <div class="footer-inner">
-      <div class="footer-col-main">
-        <div class="footer-title">COLOR SPECIFIER <span>PRO</span></div>
-        <div class="footer-text">Sistem arsitektur penetapan warna, kalkulasi rasio 60-30-10, evaluasi kontras WCAG 2.2, dan simulasi suhu Kelvin.</div>
-      </div>
-      <div class="footer-col-meta">
-        <div class="footer-note">Cakupan kalkulasi didasarkan pada standar ASTM D2805 dengan efisiensi lapisan emulsi akrilik 11 m²/liter.</div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Three.js Real-Time 3D WebGL Engine & OrbitControls (Local Offline Support) -->
+  <!-- Library Three.js & OrbitControls Lokal -->
   <script src="three.min.js"></script>
   <script src="OrbitControls.js"></script>
   <script src="arch3d.js"></script>

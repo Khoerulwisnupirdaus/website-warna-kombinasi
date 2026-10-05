@@ -42,22 +42,22 @@ const Arch3DEngine = (() => {
   // Camera Presets
   const cameraPresets = {
     bedroom: {
-      default: { pos: [0, 0.4, 7.2], target: [0, -0.2, -0.5] },
-      front: { pos: [0, 0, 7.8], target: [0, 0, -4.5] },
-      angle: { pos: [5.2, 1.2, 5.8], target: [-1.2, -0.2, -1.5] },
-      top: { pos: [0, 7.8, 6.2], target: [0, -0.5, -0.5] }
+      default: { pos: [0.6, -0.5, 4.6], target: [-0.6, -1.4, -2.0] },
+      front: { pos: [-0.8, -0.6, 4.4], target: [-0.8, -1.4, -3.2] },
+      angle: { pos: [3.6, -0.3, 3.4], target: [-0.9, -1.3, -2.0] },
+      top: { pos: [1.8, 3.8, 4.2], target: [-0.6, -1.4, -1.6] }
     },
     facade: {
-      default: { pos: [3.8, 2.8, 14.5], target: [0, 2.2, 0] },
-      front: { pos: [0, 2.5, 15.0], target: [0, 2.2, 0] },
-      angle: { pos: [10.5, 3.8, 11.2], target: [-0.5, 1.8, 0] },
-      top: { pos: [0, 15.5, 16.0], target: [0, 1.5, 0] }
+      default: { pos: [3.8, 1.4, 13.0], target: [0.2, 1.2, 0] },
+      front: { pos: [0, 1.4, 13.5], target: [0, 1.4, 0] },
+      angle: { pos: [9.5, 2.4, 10.5], target: [-0.5, 1.2, 0] },
+      top: { pos: [2.0, 13.0, 14.0], target: [0, 1.0, 0] }
     },
     living: {
-      default: { pos: [0, 0.5, 7.8], target: [0, -0.2, -0.5] },
-      front: { pos: [0, 0.2, 8.2], target: [0, 0, -4.5] },
-      angle: { pos: [5.5, 1.2, 6.2], target: [-1.5, -0.2, -1.0] },
-      top: { pos: [0, 8.2, 6.5], target: [0, -0.5, -0.5] }
+      default: { pos: [1.2, -0.4, 4.8], target: [-0.5, -1.2, -1.8] },
+      front: { pos: [-0.5, -0.5, 5.0], target: [-0.5, -1.2, -3.2] },
+      angle: { pos: [3.8, -0.2, 3.4], target: [-0.8, -1.2, -1.8] },
+      top: { pos: [1.6, 4.0, 4.2], target: [-0.5, -1.2, -1.5] }
     }
   };
 

@@ -1,72 +1,51 @@
-# Architectural Color Specifier Pro
+# KROMA &bull; Studio Warna Arsitektur &amp; Simulasi 3D
 
-Enterprise Suite untuk Spesifikasi Warna Arsitektur, Formulasi Rasio 60-30-10, Visualisasi Ruang 3D Real-Time, dan Evaluasi Kontras WCAG 2.2.
-
----
-
-## Ikhtisar Sistem
-
-Architectural Color Specifier Pro adalah platform analitis untuk arsitek, desainer interior, dan konsultan tata warna. Sistem ini dirancang untuk menyusun, memvalidasi, dan mensimulasikan skema warna ruang berdasarkan prinsip optik fisik, standar reflektansi cahaya (LRV), serta harmoni spasial.
+Platform eksplorasi kombinasi warna arsitektur, simulasi ruang 3D real-time, dan kalkulator harmoni warna.
 
 ---
 
 ## Fitur Utama
 
-### 1. Katalog Palet Arsitektural Komprehensif
-- Formulasi rasio 60-30-10: Dinding Utama (60%), Dinding Aksen (30%), Lisplang & Plafon (10%).
-- Penentuan peruntukan spesifik: Kamar Tidur Utama, Fasad Eksterior Modern, Ruang Tamu, Pantri, Studio Kerja, dan Kamar Mandi/Spa.
-- Metrik kolorimetri mendalam: Nilai HEX, RGB, HSL, dan Light Reflectance Value (LRV) per swatch.
-- Evaluasi kontras kepatuhan aksesibilitas visual WCAG 2.2 (AAA / AA).
+### 1. Katalog Kombinasi Warna Arsitektur
+- Pilihan palet warna untuk kamar tidur, fasad eksterior, ruang tamu, dapur, dan ruang kerja.
+- Panduan rasio 60-30-10: Dinding Utama (60%), Dinding Aksen (30%), Lisplang & Plafon (10%).
+- Salin kode warna HEX dengan sekali klik.
+- Pengujian langsung ke simulasi ruang 3D.
 
-### 2. Studio Elevasi & Visualizer 3D WebGL Real-Time
-- Engine render berbasis Three.js dengan pencahayaan PBR fisik (*Physically Based Rendering*).
-- 3 Model Ruang 3D:
-  - Kamar Tidur Utama (*Interior Minimalis dengan Slat Akustik dan Drop Tray Ceiling*)
-  - Fasad Villa Modern (*Eksterior Kantilever 2 Lantai dengan Paving dan Overhang Roof*)
-  - Ruang Tamu & TV Slat (*Interior Kontemporer dengan Panel Fluted Wall*)
-- Simulasi Suhu Warna Kelvin:
-  - Alami Siang Hari (5500K)
-  - Sore / Horizon (3200K)
-  - Warm White (2700K)
-  - Cool White (4000K)
-  - Nocturnal / Aksen
-- Pilihan Tekstur Permukaan: Matte Doff, Satin Sheen, dan Semi-Gloss.
-- Navigasi Kamera: Kontrol Orbit 3D, Presets (Arsitek, Frontal, 45 Sudut, Isometrik), dan Tur Otomatis 360 Derajat.
+### 2. Simulasi Ruang 3D Real-Time
+- Tiga model ruang interaktif: Kamar Tidur Utama, Fasad Villa Modern, dan Ruang Tamu Kontemporer.
+- Pengaturan suhu pencahayaan alami: Siang Hari (5500K), Sore Hangat (3200K), dan Malam Rileks (2700K).
+- Kontrol kamera: Perspektif 3D bebas, Tampak Depan, Sudut 45 Derajat, dan Tur Putar 360 Derajat.
+- Pilihan tekstur permukaan dinding: Matte Doff, Satin Lembut, dan Semi-Gloss.
 
-### 3. Studio Latar Belakang Abstrak Generatif
-- Sistem latar belakang dinamis berbasis multi-layer radial mesh gradients.
-- 8 Tema Kurasi Arsitektural: Obsidian Gold, Emerald Velvet, Nordic Twilight, Terracotta Bauhaus, Cyber Amethyst, Titanium Monochrome, Deep Abyssal, dan Dusk Crimson.
-- 4 Mode Komposisi Seni: Fluid Mesh, Topografi Kontur, Prisma Refraksi Kaca, dan Geometri Asimetris.
-- Algoritma generator acak instan untuk menghasilkan perpaduan koordinat dan warna unik tanpa aset bitmap statis.
+### 3. Latar Belakang Abstrak Generatif
+- Kanvas seni abstrak ambient interaktif berbasis HTML5 Canvas.
+- Beragam nuansa warna mewah (Obsidian Gold, Emerald Velvet, Nordic Twilight, Terracotta Earth, dan lainnya).
+- Tombol *Generate Nuansa* untuk transisi atmosferik secara instan.
 
-### 4. Kalkulator Roda Warna HSL & Estimator Volume Cat
-- Analisis harmoni kromatik: Monokromatik, Analog, Komplementer, Triadik, dan Tetradik.
-- Estimator kebutuhan volume cat arsitektural berdasarkan standar ASTM D2805 dengan daya sebar emulsi akrilik.
-- Ruang penyimpanan (*Vault*) palet kustom berbasis penyimpanan lokal browser (LocalStorage).
+### 4. Roda Harmoni Kromatik & Estimasi Cat
+- Penelusuran kombinasi Monokromatik, Analog, Komplementer, dan Triadik.
+- Estimator kebutuhan volume cat dinding dan plafon berdasarkan dimensi ruangan.
+- Penyimpanan palet kustom langsung di browser (LocalStorage).
 
 ---
 
-## Struktur Berkas
+## Struktur Proyek
 
 ```
 website-warna-kombinasi/
-├── index.html          # Markup struktural aplikasi dan panel kontrol
-├── style.css           # Desain antarmuka, variabel sistem, dan grid arsitektural
-├── app.js              # Logika aplikasi, state store, dan routing tab
-├── arch3d.js           # Engine 3D WebGL Three.js dan scene builders
-├── three.min.js        # Library render 3D Three.js (r128 lokal)
-├── OrbitControls.js    # Kontrol kamera interaktif Three.js lokal
-├── .gitignore          # Konfigurasi pengabaian berkas sistem
-└── README.md           # Dokumentasi teknis proyek
+├── index.html          # Halaman utama aplikasi
+├── style.css           # Desain antarmuka dan sistem visual obsidian
+├── app.js              # Logika katalog, kanvas ambient, dan interaksi
+├── arch3d.js           # Engine 3D WebGL Three.js
+├── three.min.js        # Library render 3D Three.js lokal
+├── OrbitControls.js    # Kontrol kamera interaktif lokal
+├── .gitignore          # Pengabaian berkas sistem
+└── README.md           # Dokumentasi proyek
 ```
 
 ---
 
-## Petunjuk Penggunaan
+## Menjalankan Proyek
 
-1. Klon repositori ini ke komputer lokal Anda:
-   ```bash
-   git clone https://github.com/Khoerulwisnupirdaus/architectural-color-specifier.git
-   ```
-2. Buka berkas `index.html` langsung pada browser modern (Google Chrome, Microsoft Edge, Mozilla Firefox, atau Safari).
-3. Tidak memerlukan dependensi backend, node server, atau konfigurasi build tambahan.
+Buka berkas `index.html` langsung di browser modern tanpa memerlukan instalasi dependensi tambahan.
